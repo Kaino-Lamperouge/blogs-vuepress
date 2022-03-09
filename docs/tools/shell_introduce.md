@@ -20,3 +20,44 @@ Bash 是 Unix 系统和 Linux 系统的一种 Shell（命令行环境），是�
 Shell : “外壳”，跟 kernel（内核）相对应，比喻内核外面的一层，即用户跟内核交互的对话界面。
 用户把指令告诉 Shell ，然后 Shell 再传输给系统内核，接着内核再去支配计算机硬件去执行各种操作。
 
+## Linux
+
+### Linux下 `/` 和 `~` 的区别
+`/` 是根目录，`~` 是home目录。
+
+`~` 代表 你的/home/用户自己的个人目录地址
+
+当用户名是 `x` ，那么 `~/` === `/home/x/`
+
+`.` 代表此目录本身，但是一般可以不写
+```
+cd ~/. === cd ~ === cd ~/
+```
+`.` 在文件名头部，代表一个隐藏文件
+
+`~/.local` 是你的主目录下一个 `.local` 的文件夹的路径，
+
+用 `ls -a` 查看，一般 `ls` 是无法看到的
+
+```
+/ 是 根节点， ~ 是 home
+如果以root账号登陆 
+~ 是 /root/
+/ 是 /
+/etc/ 是根目录下面的 etc 目录
+
+如果以 name 登陆
+~ 是 /home/name/
+/ 是 /
+```
+
+查看自己的用户名和邮箱地址：
+```
+$ git config user.name
+$ git config user.email
+```
+修改自己的用户名和邮箱地址：
+```
+$ git config --global user.name "xxx"
+$ git config --global user.email "xxx"
+```
