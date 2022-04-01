@@ -14,7 +14,7 @@ module.exports = {
     {
       text: 'Tools',
       // children: getMdByDir("tools/", "tools")
-      children: ["/tools/markdown_grammar.md", "/tools/shell_introduce.md", "/tools/timestamp_introduce.md", "/tools/JavaScript/export.md", "/tools/JavaScript/object.md", "/tools/git.md",]
+      children: ["/tools/markdown_grammar.md", "/tools/shell_introduce.md", "/tools/timestamp_introduce.md", "/tools/JavaScript/export.md", "/tools/JavaScript/object.md", "/tools/git.md", "/tools/npm.md", "/tools/优化.md"]
       // children: [
       //   // {
       //   //     text: "Markdown",
@@ -43,7 +43,7 @@ module.exports = {
         text: "Tools",
         collapsible: true,
         // children: getMdByDir("tools/", "tools")
-        children: ["/tools/markdown_grammar.md", "/tools/shell_introduce.md", "/tools/timestamp_introduce.md", "/tools/JavaScript/export.md", "/tools/JavaScript/object.md", "/tools/git.md"]
+        children: ["/tools/markdown_grammar.md", "/tools/shell_introduce.md", "/tools/timestamp_introduce.md", "/tools/JavaScript/export.md", "/tools/JavaScript/object.md", "/tools/git.md", "/tools/npm.md", "/tools/优化.md"]
       }]
     },
     search: true,

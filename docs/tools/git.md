@@ -24,7 +24,7 @@ Enter same passphrase again:
 
 ![示例](/images/ssh.png)
 
-在指定的保存路径下会生成2个名为 `id_rsa` (私钥)和 `id_rsa.pub` (公钥)的文件：
+在指定的保存路径下会生成 2 个名为 `id_rsa` (私钥)和 `id_rsa.pub` (公钥)的文件：
 
 ![示例](/images/路径.png)
 
@@ -36,7 +36,7 @@ Enter same passphrase again:
 
 ![示例](/images/公钥.png)
 
-## git多用户设置方法
+## git 多用户设置方法
 创建配置文件 `config`
 
 在 `~/.ssh` 目录下找到 `config` 文件（如果没有则创建一个， `windows` 系统下目录地址为：C:\Users\你的用户名\.ssh）
