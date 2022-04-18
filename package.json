@@ -9,7 +9,7 @@
     "deploy-gh": "GH=1 npm run docs:build && bash scripts/deploy-gh.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "muchen6",
+  "author": "周慕晨",
   "license": "ISC",
   "devDependencies": {
     "vuepress": "^2.0.0-beta.35"
