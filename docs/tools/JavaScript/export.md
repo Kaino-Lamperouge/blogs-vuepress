@@ -7,7 +7,7 @@
 在使用 `import` 进行导入时，这些绑定值只能被导入模块所读取，但在 `export` 导出模块中对这些绑定值进行修改，所修改的值也会实时地更新。
 
 #### 语法
-```
+```javascript
 // 导出单个特性
 export let name1, name2, …, nameN; // also var, const
 export let name1 = …, name2 = …, …, nameN; // also var, const
@@ -63,7 +63,7 @@ export { default } from …;
 
 在一个文件里面定义的变量、函数、类，都是私有的，对其他文件不可见。
 
-在服务器端，模块的加载是运行时同步加载的；在浏览器端，模块需要提前编译打包处理。
+在服务器端，模块的加载是运行时 `同步` 加载的；在浏览器端，模块需要提前编译打包处理。
 
 #### 特点
 - 所有代码都运行在模块作用域，不会污染全局作用域。
@@ -81,18 +81,18 @@ export { default } from …;
 `exports` 是一个对象，所以可以 `exports` 多个值
 
 `module.exports` 初始值为一个空对象 `{}`
-```
+```javascript
 module.exports = {}
 ```
 `exports` 等于 `module.exports`
 相当于在 js 文件头部，有一个 `module` 对象，`module.exports = exports`
 
 `exports` 是指向的 `module.exports` 的引用
-```
+```javascript
 exports = module.exports
 ``` 
 对于要导出的属性，可以简单直接挂到 `exports` 对象上
-```
+```javascript
 // 方案一
 module.exports.name = '张三'
 module.exports.age = 10
@@ -100,7 +100,7 @@ module.exports.age = 10
 exports.name = '张三',
 exports.age = 10
 ```
-```
+```javascript
 // 方案二
 const name = '张三'
 const age = 10
@@ -123,7 +123,7 @@ module.exports = {
 - 如果导出基础类型 exports = {} 里的内容改变， module.exports 里的内容不会变
 - 如果导出引用类型 exports = {} 里的内容改变， module.exports 里的内容会变
 (知识点：值传递 引用传递)
-```
+```javascript
 exports = {
   name: name,
   age: age
@@ -137,7 +137,7 @@ exports = {
 4. 一个模块可以导入别的模块
 
 - export { xx, xx } 与 import { xx, xx } from '../../xxx.js'
-```
+```javascript
 // 暴露.js
 let name = 'xiaoming';
 let age = 18;
@@ -146,7 +146,7 @@ export { name, age }
 import { name, age } from '../../暴露.js'
 ```
 - 导出接口取别名
-```
+```javascript
 // 暴露.js
 let fn1 = function() {console.log('sayHi')};
 export { fn1 as sayHi };
@@ -156,7 +156,7 @@ import { sayHi } from '暴露.js'
 - 直接在 `export` 的地方定义导出的函数，或者变量：
 export const foo = xxx; 
 引用 import { foo } from '../../xx'
-```
+```javascript
 // 举个 `vue` 组件懒加载的例子
 export const Index = () => import('@modules/index/index');
 ```
@@ -164,7 +164,7 @@ export const Index = () => import('@modules/index/index');
 预加载: 提前加载图片，当用户需要查看时可直接从本地缓存中渲染
 
 - `export default` 导出,这种导出的方式不需要知道变量的名字， 相当于匿名；
-```
+```javascript
 // 如果一个js模块文件就只有一个功能， 那么就可以使用export default导出
 // 暴露.js
 export default {
@@ -175,7 +175,7 @@ export default {
 import person from '暴露.js'
 ```
 - 通配符导入
-```
+```javascript
 // 暴露.js
 export fn1;
 export fn2;
@@ -188,6 +188,8 @@ import * as xxx from ‘xxx’: 会将若干 `export` 导出的内容组合成�
 import xxx from ‘xxx’：（export default Din）只会导出这个默认的对象作为一个对象;
 
 ### AMD
+AMD (Asynchronous Module Definition) 异步模块加载机制
+
 `CommonJS` 规范加载模块是同步的，只有加载完成，才能执行后面的操作。
 
 `AMD` 规范则是非同步加载模块，允许指定回调函数。
@@ -199,6 +201,8 @@ import xxx from ‘xxx’：（export default Din）只会导出这个默认的�
 此外 `AMD` 规范比 `CommonJS` 规范在浏览器端实现要来着早。
 
 ### CMD
+CMD (Common Module Definition) 通用模块定义
+
 `CMD` 规范专门用于浏览器端，模块的加载是异步的，模块使用时才会加载执行。
 
 `CMD` 规范整合了 `CommonJS` 和 `AMD` 规范的特点。(既可同步也可异步)

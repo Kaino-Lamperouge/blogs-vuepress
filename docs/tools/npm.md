@@ -10,21 +10,21 @@
 使用阿里定制的 `cnpm` 命令行工具代替默认的 `npm`
 
 `cnpm` ：是一个完整 `npmjs.org` 镜像，可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。
-```
+```bash
 $ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
-```
+```bash
 $ cnpm install
 ```
 ### 全局换源
-```
+```bash
 $ npm config set registry https://registry.npm.taobao.org
 $ npm config list
 ```
 
 ## npm
 `npm` 安装各种包 分为 `全局安装` 和 `本地安装` ：
-```
+```bash
 npm install <package>      # 本地安装
 npm install <package> -g   # 全局安装
 ```

@@ -1,9 +1,9 @@
 # uuid
 
-```
+```html
 <img :src="captchaPath" alt="" @click="getCaptcha" />
 ```
-```
+```javascript
 import { getUUID } from "@/utils";
 // 生成随机数 传给src
 getCaptcha() {
@@ -15,7 +15,7 @@ getCaptcha() {
   this.captchaPath = baseUrl + path;
 }
 ```
-```
+```javascript
 // @/utils/index.js 省略
 export function getUUID () {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {

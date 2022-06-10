@@ -21,6 +21,8 @@ module.exports = {
           "/tools/git.md",
           "/tools/npm.md",
           "/tools/优化.md",
+          "/tools/URL编码.md",
+          "/tools/Promise.md",
         ]
         // children: [
         //   // {
@@ -67,6 +69,8 @@ module.exports = {
             "/tools/git.md",
             "/tools/npm.md",
             "/tools/优化.md",
+            "/tools/URL编码.md",
+            "/tools/Promise.md",
           ]
         }
       ],

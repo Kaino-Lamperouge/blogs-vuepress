@@ -9,7 +9,7 @@
 ### shell 脚本(shell script)
 #### 示例
 打开文本编辑器(可以使用 vi/vim 命令来创建文件)，新建一个文件 test.sh，扩展名为 sh（sh代表shell）
-```
+```bash
 #!/bin/bash
 echo "Hello World !"
 ```
@@ -32,7 +32,7 @@ Shell : “外壳”，跟 kernel（内核）相对应，比喻内核外面的�
 当用户名是 `x` ，那么 `~/` === `/home/x/`
 
 `.` 代表此目录本身，但是一般可以不写
-```
+```bash
 cd ~/. === cd ~ === cd ~/
 ```
 `.` 在文件名头部，代表一个隐藏文件
@@ -41,7 +41,7 @@ cd ~/. === cd ~ === cd ~/
 
 用 `ls -a` 查看，一般 `ls` 是无法看到的
 
-```
+```bash
 / 是 根节点， ~ 是 home
 如果以root账号登陆 
 ~ 是 /root/
@@ -54,12 +54,12 @@ cd ~/. === cd ~ === cd ~/
 ```
 
 查看自己的用户名和邮箱地址：
-```
+```bash
 $ git config user.name
 $ git config user.email
 ```
 修改自己的用户名和邮箱地址：
-```
+```bash
 $ git config --global user.name "xxx"
 $ git config --global user.email "xxx"
 ```
