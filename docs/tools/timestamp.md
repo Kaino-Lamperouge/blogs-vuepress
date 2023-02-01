@@ -30,3 +30,15 @@
 1月(30.44天)|2629743
 1年(365.24天)|31556736
 
+## 13位时间戳生成
+``` 
+Date.parse(new Date()) //精确到秒 后三位毫秒是000 
+
+(new Date()).valueOf()
+
+new Date().getTime()
+
+Date.now()
+
++new Date()
+```

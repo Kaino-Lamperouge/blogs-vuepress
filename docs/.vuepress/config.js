@@ -23,6 +23,7 @@ module.exports = {
           "/tools/优化.md",
           "/tools/URL编码.md",
           "/tools/Promise.md",
+          "/tools/node.md",
         ]
         // children: [
         //   // {
@@ -41,16 +42,6 @@ module.exports = {
         //     children: ["/tools/shell_introduce.md"]
         //   }
         // ]
-      },
-      {
-        text: '金晨',
-        children: [
-          "/chen/film.md",
-          "/chen/flight.md",
-          "/chen/stage.md",
-          "/chen/TV play.md",
-          "/chen/variety.md",
-        ]
       },
       { text: 'About', link: '/about/' },
     ],
@@ -71,24 +62,10 @@ module.exports = {
             "/tools/优化.md",
             "/tools/URL编码.md",
             "/tools/Promise.md",
+            "/tools/node.md",
           ]
         }
       ],
-      '/chen/': [
-        {
-          text: "金晨",
-          collapsible: true,
-          // children: getMdByDir("tools/", "tools")
-          children: [
-            "/chen/film.md",
-            "/chen/flight.md",
-            "/chen/saying.md",
-            "/chen/stage.md",
-            "/chen/TV play.md",
-            "/chen/variety.md",
-          ]
-        }
-      ]
     },
     search: true,
     searchMaxSuggestions: 10
