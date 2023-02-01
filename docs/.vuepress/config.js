@@ -23,7 +23,7 @@ module.exports = {
           "/tools/优化.md",
           "/tools/URL编码.md",
           "/tools/Promise.md",
-          "/tools/npm报错.md",
+          "/tools/报错.md",
         ]
         // children: [
         //   // {
@@ -62,7 +62,7 @@ module.exports = {
             "/tools/优化.md",
             "/tools/URL编码.md",
             "/tools/Promise.md",
-            "/tools/npm报错.md",
+            "/tools/报错.md",
           ]
         }
       ],
