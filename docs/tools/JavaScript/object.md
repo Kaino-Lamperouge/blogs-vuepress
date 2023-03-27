@@ -1,6 +1,7 @@
 # 对象
 
 由于 `JavaScript` 的对象是动态类型，可以自由地给一个对象添加或删除属性：
+
 ```javascript
 var xiaoming = {
     name: '小明'

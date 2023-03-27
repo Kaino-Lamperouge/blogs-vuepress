@@ -1,6 +1,6 @@
 # Hello VuePress
 
-- https://vuepress.github.io/
+- <https://vuepress.github.io/>
 
 ## 手动安装
 
@@ -10,17 +10,20 @@
 mkdir vuepress-starter
 cd vuepress-starter
 ```
+
 ### Step 2: Initialize your project
 
 ```bash
 git init
 npm init
 ```
+
 ### Step 3: Install VuePress locally
 
 ```bash
 npm install -D vuepress@next
 ```
+
 ### Step 4: Add some scripts to package.json
 
 ```json
@@ -32,6 +35,7 @@ npm install -D vuepress@next
   }
 }
 ```
+
 ### Step 5: Add the default temp and cache directory to .gitignore file
 
 ```bash
@@ -47,6 +51,7 @@ mkdir docs
 
 echo '# Hello VuePress' > docs/README.md
 ```
+
 ### Step 7: Serve the documentation site in the local server
 
 ```bash
@@ -55,7 +60,7 @@ npm run docs:dev
 
 ## 配置 GitHub Pages
 
-###  在 docs/.vuepress/config.js 中配置正确的 base
+### 在 docs/.vuepress/config.js 中配置正确的 base
 
 ```js
 module.exports = {
@@ -100,11 +105,10 @@ cd -
 
 ### 执行脚本进行部署
 
-```
+```bash
 yarn deploy-gh # 或者：npm run deploy-gh
 ```
 
-### 返回 Git 仓库，点击 settings：
+### 返回 Git 仓库，点击 settings
 
 github-pages click
-

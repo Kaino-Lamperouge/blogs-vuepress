@@ -24,7 +24,7 @@
 <script>
 export default {
   components: {
-    "g-button": Button,
+    // "g-button": Button,
   },
 };
 </script>

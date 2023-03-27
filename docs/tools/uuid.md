@@ -3,6 +3,7 @@
 ```html
 <img :src="captchaPath" alt="" @click="getCaptcha" />
 ```
+
 ```javascript
 import { getUUID } from "@/utils";
 // 生成随机数 传给src
@@ -15,6 +16,7 @@ getCaptcha() {
   this.captchaPath = baseUrl + path;
 }
 ```
+
 ```javascript
 // @/utils/index.js 省略
 export function getUUID () {

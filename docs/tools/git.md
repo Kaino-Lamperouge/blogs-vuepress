@@ -1,11 +1,14 @@
 # Git
 
 ## git ssh key配置
+
 ```shell
 git config --global user.name '这里换上你的用户名'
 git config --global user.email '这里换上你的邮箱'
 ```
+
 然后执行以下命令生成密钥：
+
 ```shell
 $ ssh-keygen -t rsa -C "你的git帐号邮箱"
 Generating public/private rsa key pair.
@@ -16,7 +19,9 @@ Enter passphrase (empty for no passphrase):
 # 重复密码（可不填）↓
 Enter same passphrase again:
 ```
+
 执行命令后需要进行 3 次或 4 次确认：
+
 1. 确认秘钥的保存路径（如果不需要改路径则直接回车）；
 2. 如果上一步置顶的保存路径下已经有秘钥文件，则需要确认是否覆盖（如果之前的秘钥不再需要则直接回车覆盖，如需要则手动拷贝到其他目录后再覆盖）；
 3. 创建密码（如果不需要密码则直接回车）；
@@ -37,6 +42,7 @@ Enter same passphrase again:
 ![示例](/images/公钥.png)
 
 ## git 多用户设置方法
+
 创建配置文件 `config`
 
 在 `~/.ssh` 目录下找到 `config` 文件（如果没有则创建一个， `windows` 系统下目录地址为：C:\Users\你的用户名\.ssh）
