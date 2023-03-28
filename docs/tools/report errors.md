@@ -7,19 +7,24 @@
 Error: error:0308010C:digital envelope routines::unsupported
 
 报错原因：
-`node V17` 中的 `OpenSSL3.0` 对允许算法和密钥大小增加了严格的限制，可能会对生态系统造成一些影响。在 `node V17` 以前一些可以正常运行的的应用程序，但是在 `V17` 版本可能会抛出以下异常:
+`node V17` 中的 `OpenSSL3.0` 对允许算法和密钥大小增加了严格的限制，可能会对生态系统造成一些影响。
 
-![示例](/images/npm报错.png)
+在 `node V17` 以前一些可以正常运行的的应用程序，但是在 `V17` 版本可能会抛出以下异常:
+
+<!-- ![示例](/images/npm报错.png) -->
+<img :src="$withBase('/images/npm报错.png')">
 
 #### `nvm` 切换 `node` 版本无效问题
 
-![示例](/images/node切换失效.png)
+<!-- ![示例](/images/node切换失效.png) -->
+<img :src="$withBase('/images/node切换失效.png')">
 
 原因：当前使用的 `node` 不受 `nvm` 管控，应该是在安装 `nvm` 之前就安装了的。
 
 解决办法：删除当前的 `node`
 
-![示例](/images/node切换解决.png)
+<!-- ![示例](/images/node切换解决.png) -->
+<img :src="$withBase('/images/node切换解决.png')">
 
 ```bash
 nvm -v //查看版本号
@@ -46,7 +51,9 @@ set-executionpolicy remotesigned
 
 ## `git` 报错
 
-fatal: unable to access ‘<https://github.com/…>’: OpenSSL SSL_read: Connection was reset, errno 10054
+fatal: unable to access ‘<https://github.com/…>’:
+
+OpenSSL SSL_read: Connection was reset, errno 10054
 
 报错原因：服务器的SSL证书没有经过第三方机构的签署
 

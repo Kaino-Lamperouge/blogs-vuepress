@@ -6,6 +6,11 @@ module.exports = {
   base: '/blogs/',
   serviceWorker: true, // 阅读缓存进程
   theme: '@vuepress/theme-default',
+  // theme: defaultTheme({
+  //   // 在这里进行配置
+  //   colorModeSwitch: true,
+  //   colorMode: 'auto'
+  // }),
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
