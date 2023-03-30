@@ -44,7 +44,8 @@ npm install <package> -g   # 全局安装
 
 npm install：下载所有项目依赖包
 
-- 若在项目过程中需要引入外包，`npm install <package>` 不会将包录入 `package.json` 中。而，`npm install <package> --save` 才会。
+- 若在项目过程中需要引入外包，`npm install <package>` 不会将包录入 `package.json` 中。
+- 而 `npm install <package> --save` 才会。
 
 ### 全局安装(安装到环境)
 

@@ -247,7 +247,11 @@ new Promise((resolve, reject) => {
 
 因为立即 `resolved` 的 `Promise` 是在本轮事件循环的末尾执行，总是晚于本轮循环的同步任务
 
-调用 `resolve` 或 `reject` 以后，`Promise` 的使命就完成了，后继操作应该放到 `then` 方法里面，而不应该直接写在 `resolve` 或 `reject` 的后面。所以，最好在它们前面加上 `return` 语句，这样就不会有意外
+调用 `resolve` 或 `reject` 以后，`Promise` 的使命就完成了，
+
+后继操作应该放到 `then` 方法里面，而不应该直接写在 `resolve` 或 `reject` 的后面。
+
+所以，最好在它们前面加上 `return` 语句，这样就不会有意外
 
 ```javascript
 new Promise((resolve, reject) => {
@@ -435,7 +439,9 @@ promise
 const p = Promise.all([p1, p2, p3]);
 ```
 
-`Promise.all()` 方法接受一个数组作为参数，`p1`、`p2`、`p3`都是 `Promise` 实例，如果不是，就会先调用下面讲到的`Promise.resolve` 方法，将参数转为 `Promise` 实例，再进一步处理
+`Promise.all()` 方法接受一个数组作为参数，`p1`、`p2`、`p3`都是 `Promise` 实例，
+
+如果不是，就会先调用下面讲到的`Promise.resolve` 方法，将参数转为 `Promise` 实例，再进一步处理
 
 `Promise.all()` 方法的参数可以不是数组，但必须具有 `Iterator` (迭代器)接口，且返回的每个成员都是 `Promise` 实例
 
@@ -532,7 +538,9 @@ allSettledPromise.then(function (results) {
 
 `Promise.allSettled()` 的返回值 `allSettledPromise` ，状态只可能变成 `fulfilled` 。
 
-它的回调函数接收到的参数是数组 `results` 。该数组的每个成员都是一个对象，对应传入 `Promise.allSettled()` 的数组里面的两个 `Promise` 对象
+它的回调函数接收到的参数是数组 `results` 。
+
+该数组的每个成员都是一个对象，对应传入 `Promise.allSettled()` 的数组里面的两个 `Promise` 对象
 
 results的每个成员是一个对象，对象的格式是固定的，对应异步操作的结果。
 
@@ -568,7 +576,9 @@ Promise.any([
 
 如果所有参数实例都变成 `rejected` 状态，包装实例就会变成 `rejected` 状态。
 
-`Promise.any()` 不会因为某个 `Promise` 变成 `rejected` 状态而结束，必须等到所有参数 `Promise` 变成 `rejected` 状态才会结束。
+`Promise.any()` 不会因为某个 `Promise` 变成 `rejected` 状态而结束，
+
+必须等到所有参数 `Promise` 变成 `rejected` 状态才会结束。
 
 ### `Promise()` 与 `await` 命令结合
 
@@ -639,11 +649,15 @@ p1.then(function (value) {
 });
 ```
 
-`thenable` 对象的 `then()` 方法执行后，对象 `p1` 的状态就变为 `resolved` ，从而立即执行最后那个 `then()` 方法指定的回调函数，输出 42
+`thenable` 对象的 `then()` 方法执行后，对象 `p1` 的状态就变为 `resolved` ，
+
+从而立即执行最后那个 `then()` 方法指定的回调函数，输出 42
 
 ### 参数不是具有 `then()` 方法的对象，或根本就不是对象
 
-如果参数是一个原始值，或者是一个不具有 `then()` 方法的对象，则 `Promise.resolve()` 方法返回一个新的 `Promise` 对象，状态为 `resolved`
+如果参数是一个原始值，或者是一个不具有 `then()` 方法的对象，
+
+则 `Promise.resolve()` 方法返回一个新的 `Promise` 对象，状态为 `resolved`
 
 ```javascript
 const p = Promise.resolve('Hello');

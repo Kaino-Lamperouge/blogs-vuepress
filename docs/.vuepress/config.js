@@ -1,39 +1,17 @@
 const { getMdByDir } = require("./utils");
-
 module.exports = {
   title: "zhoumuchen",
   // description: "This is a blog.",
   base: '/blogs/',
   serviceWorker: true, // 阅读缓存进程
   theme: '@vuepress/theme-default',
-  // theme: defaultTheme({
-  //   // 在这里进行配置
-  //   colorModeSwitch: true,
-  //   colorMode: 'auto'
-  // }),
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
       {
-        text: 'Tools',items: [
-          { text: 'Export', link: '/tools/JavaScript/export.md' },
-          { text: 'Object', link: '/tools/JavaScript/object.md' },
-          { text: 'B端C端', link: '/tools/Business Consumer.md' },
-          { text: '闭包', link: '/tools/closure.md' },
-          { text: '防抖和节流', link: '/tools/debounce throttle.md' },
-          { text: 'Git', link: '/tools/git.md' },
-          { text: '低代码', link: '/tools/Low Code.md' },
-          { text: 'md语法', link: '/tools/markdown.md' },
-          { text: '内存泄漏', link: '/tools/Memory leak.md' },
-          { text: 'NPM', link: '/tools/npm.md' },
-          { text: '优化', link: '/tools/optimize.md' },
-          { text: 'Promise', link: '/tools/promise.md' },
-          { text: '报错', link: '/tools/report errors.md' },
-          { text: 'Shell', link: '/tools/shell.md' },
-          { text: '时间戳', link: '/tools/timestamp.md' },
-          { text: 'URL编码', link: '/tools/URL Code.md' },
-          { text: 'uuid', link: '/tools/uuid.md' },
-      ]
+        text: 'Each', items: [
+          { text: '017', link: '/each/017.md' },
+        ]
       },
       { text: 'About', link: '/about/' },
     ],
@@ -48,6 +26,7 @@ module.exports = {
           { title: "B端C端", path: "/tools/Business Consumer.md" },
           { title: "闭包", path: "/tools/closure.md" },
           { title: "防抖和节流", path: "/tools/debounce throttle.md" },
+          { title: "断点调试", path: "/tools/debugger.md" },
           { title: "Git", path: "/tools/git.md" },
           { title: "低代码", path: "/tools/Low Code.md" },
           { title: "md语法", path: "/tools/markdown.md" },
