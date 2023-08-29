@@ -9,8 +9,16 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       {
-        text: 'Each', items: [
-          { text: '017', link: '/each/017.md' },
+        text: 'Canvas', items: [
+          { text: 'Canvas', link: '/Canvas/Canvas.md' },
+          { text: 'WebGLProgram', link: '/Canvas/WebGLProgram.md' },
+          { text: 'Three.js', link: '/Canvas/Three.js.md' },
+        ]
+      },
+      {
+        text: 'MiniProject', items: [
+          { text: '计时器', link: '/miniproject/Timer.md' },
+          { text: 'demo', link: '/miniproject/Demo.md' },
         ]
       },
       { text: 'About', link: '/about/' },
@@ -23,6 +31,8 @@ module.exports = {
         children: [
           { title: "Export", path: "/tools/JavaScript/export.md" },
           { title: "Object", path: "/tools/JavaScript/object.md" },
+          { title: "更改鼠标指针", path: "/tools/JavaScript/cursor.md" },
+          { title: "Void", path: "/tools/JavaScript/void.md" },
           { title: "B端C端", path: "/tools/Business Consumer.md" },
           { title: "闭包", path: "/tools/closure.md" },
           { title: "防抖和节流", path: "/tools/debounce throttle.md" },
@@ -36,9 +46,10 @@ module.exports = {
           { title: "Promise", path: "/tools/promise.md" },
           { title: "报错", path: "/tools/report errors.md" },
           { title: "Shell", path: "/tools/shell.md" },
+          { title: "Style", path: "/tools/style.md" },
           { title: "时间戳", path: "/tools/timestamp.md" },
           { title: "URL编码", path: "/tools/URL Code.md" },
-          { title: "uuid", path: "/tools/uuid.md" },
+          { title: "UUID", path: "/tools/uuid.md" },
         ],
       }
     ],
