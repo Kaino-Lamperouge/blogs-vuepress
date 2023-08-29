@@ -1,6 +1,6 @@
 const { getMdByDir } = require("./utils");
 module.exports = {
-  title: "zhoumuchen",
+  title: "Kaino·Lamperouge",
   // description: "This is a blog.",
   base: '/blogs/',
   serviceWorker: true, // 阅读缓存进程
