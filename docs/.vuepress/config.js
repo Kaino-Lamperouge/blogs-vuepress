@@ -10,9 +10,10 @@ module.exports = {
       { text: 'Home', link: '/' },
       {
         text: 'Canvas', items: [
-          { text: 'Canvas', link: '/Canvas/Canvas.md' },
-          { text: 'WebGLProgram', link: '/Canvas/WebGLProgram.md' },
-          { text: 'Three.js', link: '/Canvas/Three.js.md' },
+          { text: 'Canvas', link: '/canvas/Canvas.md' },
+          { text: 'Three.js', link: '/canvas/Three.js.md' },
+          { text: 'WebGL', link: '/canvas/WebGL.md' },
+          { text: 'WebGLProgram', link: '/canvas/WebGLProgram.md' },
         ]
       },
       {

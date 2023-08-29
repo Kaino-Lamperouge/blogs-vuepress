@@ -1,6 +1,10 @@
 # Three.js
 
 `Three.js` 是一款基于原生 `WebGL` 封装通用 `Web 3D` 引擎
+
+`Three.js` 是一个基于 `WebGL` 的 `JavaScript` 库，它封装了 `WebGL` 的底层细节，提供了更高级的 `API` 和功能，使开发者能够更轻松地创建和展示 `3D` 场景。
+
+`Three.js` 提供了一系列的类和方法，用于创建和操作 `3D` 对象、光照、材质、相机等，简化了 `WebGL` 的开发过程。
 **透视相机（PerspectiveCamera）**
 
 ```js
