@@ -41,7 +41,8 @@ event(game);
 调用了名为 `event` 的函数，并将游戏实例 `game` 作为参数传递给该函数
 
 为游戏添加事件监听器，以响应用户的操作并更新游戏状态
-**示例**
+
+**示例：**
 
 ```js
 on(window, "load", function () {
@@ -74,7 +75,8 @@ var config = (function(){
 在这个例子中，自执行函数没有任何代码或返回值，因此它实际上不会产生任何效果
 
 要使这个自执行函数有意义，我们需要在函数体中添加代码，返回一个对象或函数，或者在调用这个函数时传递参数
-**示例**
+
+**示例：**
 
 ```js
 var config = (function () {
@@ -137,7 +139,8 @@ var $ = function (elem) {
 在函数内部，使用 `document.querySelectorAll` 方法来查询文档中匹配该选择器的所有元素，并将结果返回
 
 通过调用 `$` 函数并传入一个 `CSS` 选择器作为参数，我们可以方便地获取匹配该选择器的所有元素
-**示例**
+
+**示例：**
 
 ```js
 // 获取所有的段落元素
@@ -154,7 +157,7 @@ var myDiv = $("#myDiv");
 
 ---
 
-**示例**
+**示例：**
 
 ```js
 var on = function (elem, type, callback, status) {
@@ -213,7 +216,7 @@ JSON.parse();
 
 ---
 
-**示例**
+**示例：**
 
 ```js
 var toNdimension = function (arr, num) {
@@ -235,7 +238,7 @@ var toNdimension = function (arr, num) {
 
 ---
 
-**示例**
+**示例：**
 
 ```js
 function reduceDimension(arr) {

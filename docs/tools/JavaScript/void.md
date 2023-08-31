@@ -3,7 +3,8 @@
 **`void` 是一元运算符**
 
 `void` 运算符对给定的表达式进行求值，然后返回 `undefined` 。
-**语法**
+
+**语法：**
 
 ```js
 void expression

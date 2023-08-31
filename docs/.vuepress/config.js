@@ -11,6 +11,7 @@ module.exports = {
       {
         text: 'Canvas', items: [
           { text: 'Canvas', link: '/canvas/Canvas.md' },
+          { text: 'GLSL', link: '/canvas/OpenGL.md' },
           { text: 'Three.js', link: '/canvas/Three.js.md' },
           { text: 'WebGL', link: '/canvas/WebGL.md' },
           { text: 'WebGLProgram', link: '/canvas/WebGLProgram.md' },
