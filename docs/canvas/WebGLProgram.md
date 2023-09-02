@@ -65,10 +65,6 @@ if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
 
 ---
 
-`WebGLRenderingContext.getAttribLocation(program, name)` 返回了给定 **WebGLProgram** 对象中某属性的下标指向位置
-
----
-
 `WebGLRenderingContext.createBuffer()` 创建并初始化一个用于储存顶点数据或着色数据的 **WebGLBuffer** 对象
 
 ---
@@ -118,7 +114,7 @@ if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
 
 ---
 
-`WebGLRenderingContext.vertexAttribPointer(index, size, type, normalized, stride, offset)` 绑定当前缓冲区范围到 `gl.ARRAY_BUFFER` ,成为当前顶点缓冲区对象的通用顶点属性并指定它的布局 (缓冲区对象中的偏移量)
+`WebGLRenderingContext.vertexAttribPointer(index, size, type, normalized, stride, offset)` 绑定当前缓冲区范围到 `gl.ARRAY_BUFFER` ，成为当前顶点缓冲区对象的通用顶点属性并指定它的布局 (缓冲区对象中的偏移量)
 
 告诉显卡从当前绑定的缓冲区（bindBuffer() 指定的缓冲区）中读取顶点数据
 
@@ -239,3 +235,145 @@ void gl.vertexAttrib4fv(index, value);
 
   (当使用 WebGL 2 context)
   - `gl.RASTERIZER_DISCARD` : 图元光栅化阶段之前，但在任意的 `transform` 反馈之后，就立刻被丢弃。`gl.clear()` 命令被忽略。
+
+---
+
+`WebGLRenderingContext.viewport(x, y, width, height)` 用来设置视口，即指定从标准设备到窗口坐标的 x、y 仿射变换
+
+- `x` : 用来设定视口的左下角水平坐标 默认值：`0`
+
+- `y` : 用来设定视口的左下角垂直坐标 默认值：`0`
+  
+- `width` : 非负数，用来设定视口的宽度。默认值：`canvas` 的宽度
+  
+- `height` : 非负数，用来设定视口的高度。默认值：`canvas` 的高度
+  
+---
+
+`WebGLRenderingContext.uniform[1234][fi][v]()` 指定 `uniform` 变量的值
+
+所有在 `ShaderProgram` 对象中定义的，且激活的 `uniform` 变量在 `ShaderProgram` 执行 `link` 成功后被初始化为 `0`
+
+它们将保留通过调用此方法分配给它们的值，直到再次将其初始化为 `0` 时，也就是 `ShaderProgram` 对象上发生下一次成功的 `link` 操作为止
+
+```js
+void gl.uniform1f(location, v0);
+void gl.uniform1fv(location, value);
+void gl.uniform1i(location, v0);
+void gl.uniform1iv(location, value);
+
+void gl.uniform2f(location, v0, v1);
+void gl.uniform2fv(location, value);
+void gl.uniform2i(location, v0, v1);
+void gl.uniform2iv(location, value);
+
+void gl.uniform3f(location, v0, v1, v2);
+void gl.uniform3fv(location, value);
+void gl.uniform3i(location, v0, v1, v2);
+void gl.uniform3iv(location, value);
+
+void gl.uniform4f(location, v0, v1, v2, v3);
+void gl.uniform4fv(location, value);
+void gl.uniform4i(location, v0, v1, v2, v3);
+void gl.uniform4iv(location, value);
+```
+
+- `location` : `WebGLUniformLocation` 对象包含了将要修改的 `uniform` 属性位置
+
+- `value, v0, v1, v2, v3` : 新的值将被用于 `uniform` 变量
+  
+  - 浮点值 `Number` (方法名跟" `f` ")
+  - 浮点数组 (例如 `Float32Array` 或 `Array` 的数组) 用于浮点型向量方法 (方法名跟 " `fv` ")
+  - 整型值 `Number` (方法名跟" `i` ")
+  - 整型数组 `Int32Array` 用于整型向量方法 (方法名跟 " `iv` ")
+
+---
+
+`WebGLRenderingContext.createShader(type)` 创建一个 `WebGLShader` 着色器对象，该对象可以使用 `WebGLRenderingContext.shaderSource()` 和 `WebGLRenderingContext.compileShader()` 方法配置着色器代码
+
+- `type` : 参数为 `gl.VERTEX_SHADER` 或 `gl.FRAGMENT_SHADER` 两者中的一个
+
+---
+
+`WebGLRenderingContext.shaderSource(shader, source)` 设置 `WebGLShader` 着色器（顶点着色器及片元着色器）的 `GLSL` 程序代码
+
+- `shader` : 用于设置程序代码的 `WebGLShader`（着色器对象）
+  
+- `source` : 包含 `GLSL` 程序代码的字符串
+
+---
+
+`WebGLRenderingContext.compileShader(shader)` 用于编译一个 `GLSL` 着色器，使其成为为二进制数据，然后就可以被 `WebGLProgram` 对象所使用
+
+- `shader` : 一个片元或顶点着色器（ `WebGLShader` ）
+  
+```js
+var shader = gl.createShader(gl.VERTEX_SHADER);
+gl.shaderSource(shader, shaderSource);
+gl.compileShader(shader);
+```
+
+---
+
+`WebGLRenderingContext.getShaderParameter(shader, pname)` 返回给定的着色器信息
+
+- `shader` : 需要获取信息的着色器对象
+
+- `pname` : 指定要查询的信息属性名称
+  - `gl.DELETE_STATUS` : 标示着色器是否被删除，删除（ `GL_TRUE` ）未删除（ `GL_FALSE` ）
+  - `gl.COMPILE_STATUS` : 标示着色器是否编译成功，是（`GL_TRUE` ）不是（ `GL_FALSE` ）
+  - `gl.SHADER_TYPE` : 标示着色器类型，是顶点着色器 ( `gl.VERTEX_SHADER` ) 还是片段着色器 ( `gl.FRAGMENT_SHADER` )
+
+---
+
+`WebGLRenderingContext.getShaderInfoLog(shader, maxLength, *length, *infoLog)` 返回着色器对象的信息日志
+
+- `shader` : 指定要查询其信息日志的着色器对象
+  
+- `maxLength` : 指定用于存储返回信息日志的字符缓冲区的大小
+  
+- `shader` : 返回 `infoLog` 中返回的字符串的长度(不包括空终止符)
+  
+- `shader` : 指定用于返回信息日志的字符数组
+  
+---
+
+`WebGLRenderingContext.getAttribLocation(program, name)` 返回了给定 `WebGLProgram` 对象中某属性的下标指向位置
+
+- `program` : 一个包含了属性参数的 `WebGLProgram` 对象
+
+- `name` : 需要获取下标指向位置的 `DOMString` 属性参数名
+  
+返回值 : 表明属性位置的下标 `GLint` 数字，如果找不到该属性则返回 `-1`
+
+---
+
+`WebGLRenderingContext.getUniformLocation(program, name)` 返回统一变量的位置
+
+- `program` : 指定要查询的程序对象
+
+- `name` : 指向一个以空结尾的字符串，该字符串包含要查询其位置的统一变量的名称
+
+---
+
+`WebGLRenderingContext.useProgram(program)` 将定义好的 `WebGLProgram` 对象添加到当前的渲染状态中
+
+- `program` : 需要添加的 `WebGLProgram` 对象
+
+---
+
+`WebGLRenderingContext.drawArrays(mode, first, count)` 从向量数组中绘制图元
+
+- `mode` : `GLenum (en-US)` 类型，指定绘制图元的方式
+  
+  - `gl.POINTS` : 绘制一系列点
+  - `gl.LINE_STRIP` : 绘制一个线条。即，绘制一系列线段，上一点连接下一点
+  - `gl.LINE_LOOP` : 绘制一个线圈。即，绘制一系列线段，上一点连接下一点，并且最后一点与第一个点相连
+  - `gl.LINES` : 绘制一系列单独线段。每两个点作为端点，线段之间不连接
+  - `gl.TRIANGLE_STRIP` : 绘制一个三角带
+  - `gl.TRIANGLE_FAN` : 绘制一个三角扇
+  - `gl.TRIANGLES` : 绘制一系列三角形。每三个点作为顶点
+  
+- `first` : `GLenum (en-US)` 类型，指定从哪个点开始绘制
+  
+- `count` : `GLenum (en-US)` 类型，指定绘制需要使用到多少个点
