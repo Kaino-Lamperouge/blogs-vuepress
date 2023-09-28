@@ -18,6 +18,11 @@ module.exports = {
         ]
       },
       {
+        text: 'Chrome', items: [
+          { text: '扩展', link: '/chrome/Extension.md' },
+        ]
+      },
+      {
         text: 'MiniProject', items: [
           { text: '计时器', link: '/miniproject/Timer.md' },
           { text: 'demo', link: '/miniproject/Demo.md' },
@@ -31,9 +36,11 @@ module.exports = {
         path: '/', // 默认激活的选项
         collapsable: false, // 不折叠
         children: [
+          { title: "浅拷贝深拷贝", path: "/tools/JavaScript/copy.md" },
+          { title: "更改鼠标指针", path: "/tools/JavaScript/cursor.md" },
+          { title: "事件流", path: "/tools/JavaScript/event.md" },
           { title: "Export", path: "/tools/JavaScript/export.md" },
           { title: "Object", path: "/tools/JavaScript/object.md" },
-          { title: "更改鼠标指针", path: "/tools/JavaScript/cursor.md" },
           { title: "Void", path: "/tools/JavaScript/void.md" },
           { title: "B端C端", path: "/tools/Business Consumer.md" },
           { title: "闭包", path: "/tools/closure.md" },

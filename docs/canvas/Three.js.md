@@ -52,7 +52,9 @@ scene.add( camera );
 
 **不执行 `.updateMatrixWorld()` ， `.render()` 之后查看矩阵：**
 
-当你改变 `.position` 、 `.scale` 等属性，不执行 `.updateMatrixWorld()` 更新矩阵矩阵，在 `.render` 之后查看本地矩阵和世界矩阵的值，你会发现发生了变化。这说明 `three.js` 默认情况下，在执行 `.render()` 的时候，会自动获取 `.position` 、 `.scale` 等属性的值，更新模型的本地矩阵、世界矩阵属性
+当你改变 `.position` 、 `.scale` 等属性，不执行 `.updateMatrixWorld()` 更新矩阵矩阵，在 `.render` 之后查看本地矩阵和世界矩阵的值，你会发现发生了变化。
+
+这说明 `three.js` 默认情况下，在执行 `.render()` 的时候，会自动获取 `.position` 、 `.scale` 等属性的值，更新模型的本地矩阵、世界矩阵属性
 
 ---
 
