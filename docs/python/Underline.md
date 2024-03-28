@@ -19,4 +19,4 @@
 
 不需要访问正在运行的索引，可以使用“_”来表示它只是一个临时值
 
-<img :src="$withBase('/images/python.png')">
+<img :src="$withBase('/images/python.png')" alt=''>

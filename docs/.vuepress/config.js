@@ -50,6 +50,8 @@ module.exports = {
         path: '/', // 默认激活的选项
         collapsable: false, // 不折叠
         children: [
+          { title: "animation", path: "/tools/CSS/animation.md" },
+          { title: "@keyframes", path: "/tools/CSS/keyframes.md" },
           { title: "浅拷贝深拷贝", path: "/tools/JavaScript/copy.md" },
           { title: "更改鼠标指针", path: "/tools/JavaScript/cursor.md" },
           { title: "事件流", path: "/tools/JavaScript/event.md" },
@@ -59,14 +61,14 @@ module.exports = {
           { title: "Void", path: "/tools/JavaScript/void.md" },
           { title: "B端C端", path: "/tools/Business Consumer.md" },
           { title: "闭包", path: "/tools/closure.md" },
-          { title: "Css预处理器", path: "/tools/css.md" },
+          { title: "Css预处理器", path: "/tools/css preprocessor.md" },
           { title: "防抖和节流", path: "/tools/debounce throttle.md" },
           { title: "断点调试", path: "/tools/debugger.md" },
           { title: "钩子函数", path: "/tools/hook.md" },
           { title: "Git", path: "/tools/git.md" },
           { title: "低代码", path: "/tools/Low Code.md" },
           { title: "md语法", path: "/tools/markdown.md" },
-          { title: "内存泄漏", path: "/tools/Memory leak.md" },
+          { title: "内存泄漏", path: "/tools/Memory Leak.md" },
           { title: "MVC", path: "/tools/MVC.md" },
           { title: "MVVM", path: "/tools/MVVM.md" },
           { title: "NPM", path: "/tools/npm.md" },

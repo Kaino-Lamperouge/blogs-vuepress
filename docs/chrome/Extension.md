@@ -485,16 +485,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 `content script` 的调试：F12 -> source -> page
 
 <!-- ![示例](/images/chrome.png) -->
-<img :src="$withBase('/images/chrome.png')">
+<img :src="$withBase('/images/chrome.png')" alt=''>
 
 `backgroud script` 的调试：`chrome://extensions` 找到对应的扩展，点击背景视图，可以看到 `backgroud script` 进行调试，还能在控制台调用 `chrome api` ，请求也可以看到。
 
 ## 信息传递的异步性
 
 考虑 `content script` 的插入时机是否对通信产生一定影响
-
-
-
-
-
-

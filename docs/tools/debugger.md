@@ -18,7 +18,7 @@ greet();
 console.log("js evaluation done");
 ```
 
-<img :src="$withBase('/images/debugger.png')">
+<img :src="$withBase('/images/debugger.png')" alt=''>
 
 - 蓝色区域用于文件选择:`Page` 一栏是指当前页面中的 `JS` 文件， `Filesystem` 会显示我们系统中的文件。
 - 红色区域代码的行号和内容。代码的行号处可以通过点击来添加新的断点，再次点击后取消。

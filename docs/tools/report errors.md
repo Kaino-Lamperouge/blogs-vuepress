@@ -12,19 +12,19 @@ Error: error:0308010C:digital envelope routines::unsupported
 在 `node V17` 以前一些可以正常运行的的应用程序，但是在 `V17` 版本可能会抛出以下异常:
 
 <!-- ![示例](/images/npm报错.png) -->
-<img :src="$withBase('/images/npm报错.png')">
+<img :src="$withBase('/images/npm报错.png')" alt=''>
 
 #### `nvm` 切换 `node` 版本无效问题
 
 <!-- ![示例](/images/node切换失效.png) -->
-<img :src="$withBase('/images/node切换失效.png')">
+<img :src="$withBase('/images/node切换失效.png')" alt=''>
 
 原因：当前使用的 `node` 不受 `nvm` 管控，应该是在安装 `nvm` 之前就安装了的。
 
 解决办法：删除当前的 `node`
 
 <!-- ![示例](/images/node切换解决.png) -->
-<img :src="$withBase('/images/node切换解决.png')">
+<img :src="$withBase('/images/node切换解决.png')" alt=''>
 
 ```bash
 nvm -v //查看版本号

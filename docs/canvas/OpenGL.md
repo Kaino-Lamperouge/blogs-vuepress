@@ -148,7 +148,7 @@ vec3 a = vec3(1.0, 2.0, 3.0) * 2;
   vec3 d = a * b; // = vec3(0.1, 0.4, 0.9)
   ```
 
-<img :src="$withBase('/images/vec-vec.png')">
+<img :src="$withBase('/images/vec-vec.png')" alt=''>
 
 - `vec` (向量) 与 `mat` (矩阵)：
   要保证操作数的阶数相同，且 `vec` 与 `mat` 间只存在乘法运算
@@ -167,9 +167,9 @@ vec3 a = vec3(1.0, 2.0, 3.0) * 2;
 
   向量与矩阵的乘法规则：
 
-  <img :src="$withBase('/images/vec-mat.png')">
+  <img :src="$withBase('/images/vec-mat.png')" alt=''>
   
-  <img :src="$withBase('/images/vec-mat2.png')">
+  <img :src="$withBase('/images/vec-mat2.png')" alt=''>
 
 - `mat` (矩阵) 与 `mat` (矩阵)：
   要保证操作数的阶数相同
@@ -187,7 +187,7 @@ vec3 a = vec3(1.0, 2.0, 3.0) * 2;
 
   矩阵乘法规则：
   
-  <img :src="$withBase('/images/mat-mat.png')">
+  <img :src="$withBase('/images/mat-mat.png')" alt=''>
 
 ### 变量限定符
 

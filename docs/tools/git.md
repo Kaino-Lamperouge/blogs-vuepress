@@ -28,12 +28,12 @@ Enter same passphrase again:
 4. 确认密码；
 
 <!-- ![示例](/images/ssh.png) -->
-<img :src="$withBase('/images/ssh.png')">
+<img :src="$withBase('/images/ssh.png')" alt=''>
 
 在指定的保存路径下会生成 2 个名为 `id_rsa` (私钥)和 `id_rsa.pub` (公钥)的文件：
 
 <!-- ![示例](/images/路径.png) -->
-<img :src="$withBase('/images/路径.png')">
+<img :src="$withBase('/images/路径.png')" alt=''>
 
 打开 `github` ，进入配置页：头像 --> Settings
 
@@ -42,7 +42,7 @@ Enter same passphrase again:
 用文本工具打开之前生成的 `id_rsa.pub` 文件，把内容拷贝到 `key` 下面的输入框
 
 <!-- ![示例](/images/公钥.png) -->
-<img :src="$withBase('/images/公钥.png')">
+<img :src="$withBase('/images/公钥.png')" alt=''>
 
 ## git 多用户设置方法
 

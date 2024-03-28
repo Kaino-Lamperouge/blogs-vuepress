@@ -237,7 +237,7 @@ ES6新引入的 `WeakSet` 和 `WeakMap` 两种类型，均只能接收引用值�
 强引用可能导致内存无法释放，造成内存泄漏；而弱引用不存在这个问题。
 
 <!-- ![示例](/images/引用举例.png) -->
-<img :src="$withBase('/images/引用举例.png')">
+<img :src="$withBase('/images/引用举例.png')" alt=''>
 
 ##### 强引用举例
 
@@ -330,7 +330,7 @@ obj = null
 `Performance` ：用来监控性能指标，可以记录并分析在网站的生命周期内所发生的各类事件，通过它监控程序中的各种性能情况并分析，其中就包括内存
 
 <!-- ![示例](/images/performance.png) -->
-<img :src="$withBase('/images/performance.png')">
+<img :src="$withBase('/images/performance.png')" alt=''>
 
 勾选了 `Memory` 选项，才可以看到内存相关的分析
 
@@ -351,7 +351,7 @@ obj = null
 `Heap Profiling` 可以记录当前的堆内存 `heap` 的快照，并生成对象的描述文件，该描述文件给出了当下 `JS` 运行所用的所有对象，以及这些对象所占用的内存大小、引用的层级关系等等，用它就可以定位出引起问题的具体原因以及位置。
 
 <!-- ![示例](/images/memory.png) -->
-<img :src="$withBase('/images/memory.png')">
+<img :src="$withBase('/images/memory.png')" alt=''>
 
 点击一下小垃圾桶（标记 3），触发一下 GC，把没用的东西从内存中干掉
 
@@ -395,7 +395,7 @@ obj = null
 - `HTMLDivElement`、`HTMLAnchorElement`、`DocumentFragment`，代码中对元素的引用或者指定的 `DOM` 对象引用
 
 <!-- ![示例](/images/快照对比.png) -->
-<img :src="$withBase('/images/快照对比.png')">
+<img :src="$withBase('/images/快照对比.png')" alt=''>
 
 ### 修复验证
 
