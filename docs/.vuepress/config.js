@@ -1,3 +1,11 @@
+/*
+ * @Author: muchen0905 1832612650@qq.com
+ * @Date: 2026-03-22 19:41:40
+ * @LastEditors: muchen0905 1832612650@qq.com
+ * @LastEditTime: 2026-03-22 20:25:29
+ * @FilePath: \blogs-vuepress\docs\.vuepress\config.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 const { getMdByDir } = require("./utils");
 module.exports = {
   title: "Kaino·Lamperouge",
@@ -8,6 +16,23 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
+            {
+        text: 'CSS', items: [
+          { text: 'animation', link: '/css/animation.md' },
+          { text: '@keyframes', link: '/css/keyframes.md' },
+        ]
+      },
+      {
+        text: 'JavaScript', items: [
+          { title: "浅拷贝深拷贝", path: "/JavaScript/copy.md" },
+          { title: "更改鼠标指针", path: "/JavaScript/cursor.md" },
+          { title: "事件流", path: "/JavaScript/event.md" },
+          { title: "Export", path: "/JavaScript/export.md" },
+          { title: "Grammar", path: "/JavaScript/grammar.md" },
+          { title: "Object", path: "/JavaScript/object.md" },
+          { title: "Void", path: "/JavaScript/void.md" },
+        ]
+      },
       {
         text: 'Canvas', items: [
           { text: 'Canvas', link: '/canvas/Canvas.md' },
@@ -42,7 +67,7 @@ module.exports = {
           { text: '批量删除', link: '/miniproject/Batch.md' },
         ]
       },
-      { text: 'About', link: '/about/' },
+      { text: 'About', link: '' },
     ],
     sidebar: [
       {
@@ -50,15 +75,6 @@ module.exports = {
         path: '/', // 默认激活的选项
         collapsable: false, // 不折叠
         children: [
-          { title: "animation", path: "/tools/CSS/animation.md" },
-          { title: "@keyframes", path: "/tools/CSS/keyframes.md" },
-          { title: "浅拷贝深拷贝", path: "/tools/JavaScript/copy.md" },
-          { title: "更改鼠标指针", path: "/tools/JavaScript/cursor.md" },
-          { title: "事件流", path: "/tools/JavaScript/event.md" },
-          { title: "Export", path: "/tools/JavaScript/export.md" },
-          { title: "Grammar", path: "/tools/JavaScript/grammar.md" },
-          { title: "Object", path: "/tools/JavaScript/object.md" },
-          { title: "Void", path: "/tools/JavaScript/void.md" },
           { title: "B端C端", path: "/tools/Business Consumer.md" },
           { title: "闭包", path: "/tools/closure.md" },
           { title: "Css预处理器", path: "/tools/css preprocessor.md" },

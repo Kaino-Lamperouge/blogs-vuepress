@@ -6,12 +6,13 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy-gh": "GH=1 npm run docs:build && bash scripts/deploy-gh.sh",
+    "deploy-gh": "cross-env GH=1 npm run docs:build && bash scripts/deploy-gh.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kaino·Lamperouge",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "vuepress": "^2.0.0-beta.35"
   }
 }
