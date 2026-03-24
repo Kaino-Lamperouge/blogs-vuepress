@@ -19,8 +19,12 @@ module.exports = {
             {
         text: 'CSS', items: [
           { text: 'animation', link: '/css/animation.md' },
+          { text: 'Image', link: '/css/image.md' },
           { text: '@keyframes', link: '/css/keyframes.md' },
-          { text: 'opacity', link: '/css/opacity.md' },
+          { text: 'Opacity', link: '/css/opacity.md' },
+          { title: "Style", path: "/css/style.md" },
+          { text: '文本控制属性', link: '/css/text.md' },
+          { title: "Triangle", path: "/css/triangle.md" },
         ]
       },
       {
@@ -88,12 +92,12 @@ module.exports = {
           { title: "MVC", path: "/tools/MVC.md" },
           { title: "MVVM", path: "/tools/MVVM.md" },
           { title: "NPM", path: "/tools/npm.md" },
+          { title: "NVM", path: "/tools/nvm.md" },
           { title: "优化", path: "/tools/optimize.md" },
           { title: "Promise", path: "/tools/promise.md" },
           { title: "报错", path: "/tools/report errors.md" },
           { title: "Shell", path: "/tools/shell.md" },
           { title: "SSH", path: "/tools/ssh.md" },
-          { title: "Style", path: "/tools/style.md" },
           { title: "时间戳", path: "/tools/timestamp.md" },
           { title: "URL编码", path: "/tools/URL Code.md" },
           { title: "URL携带参数缺失", path: "/tools/URL Transfer Parameters.md" },
