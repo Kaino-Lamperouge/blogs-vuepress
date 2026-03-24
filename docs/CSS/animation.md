@@ -225,3 +225,47 @@ animation-play-state: paused, running, running;
 `running` 当前动画正在运行
 
 `paused` 当前动画已被停止
+
+## 实例
+
+向左无限滚动的动画效果
+
+```css
+.content {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  animation: scroll-left 15s linear infinite;  /* 持续时间15秒 线性运动（匀速） 无限循环 */
+  width: fit-content;  /* 宽度自适应内容 */
+  will-change: transform;  /* 提示浏览器元素将要被变换，让浏览器提前优化 */
+  backface-visibility: hidden;  /* 隐藏元素的背面，在3D变换时提高性能 */
+  perspective: 1000px;  /* 设置3D透视距离，使3D变换效果更自然 */
+}
+```
+
+`will-change: transform`
+
+预先告诉浏览器这个元素将要进行transform变换
+
+浏览器会为此元素创建独立的合成层，避免动画时重排/重绘整个页面
+
+应在动画开始前设置，动画结束后移除，避免内存占用
+
+`backface-visibility: hidden`
+
+当元素在3D空间中旋转，背面朝向用户时是否可见
+
+设置hidden时，背面不可见
+
+浏览器可以跳过背面渲染，减少绘制工作
+
+`perspective: 1000px`
+
+设置3D元素的透视距离
+
+值越小，透视效果越强（物体变形更明显）
+
+值越大，透视效果越弱（更接近正交投影）
+
+1000px是比较中等的透视值
+

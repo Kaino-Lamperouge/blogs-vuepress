@@ -20,6 +20,7 @@ module.exports = {
         text: 'CSS', items: [
           { text: 'animation', link: '/css/animation.md' },
           { text: '@keyframes', link: '/css/keyframes.md' },
+          { text: 'opacity', link: '/css/opacity.md' },
         ]
       },
       {
@@ -81,7 +82,6 @@ module.exports = {
           { title: "防抖和节流", path: "/tools/debounce throttle.md" },
           { title: "断点调试", path: "/tools/debugger.md" },
           { title: "钩子函数", path: "/tools/hook.md" },
-          { title: "Git", path: "/tools/git.md" },
           { title: "低代码", path: "/tools/Low Code.md" },
           { title: "md语法", path: "/tools/markdown.md" },
           { title: "内存泄漏", path: "/tools/Memory Leak.md" },
@@ -92,6 +92,7 @@ module.exports = {
           { title: "Promise", path: "/tools/promise.md" },
           { title: "报错", path: "/tools/report errors.md" },
           { title: "Shell", path: "/tools/shell.md" },
+          { title: "SSH", path: "/tools/ssh.md" },
           { title: "Style", path: "/tools/style.md" },
           { title: "时间戳", path: "/tools/timestamp.md" },
           { title: "URL编码", path: "/tools/URL Code.md" },

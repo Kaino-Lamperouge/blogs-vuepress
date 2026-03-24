@@ -44,6 +44,8 @@ Enter same passphrase again:
 <!-- ![示例](/images/公钥.png) -->
 <img :src="$withBase('/images/公钥.png')" alt=''>
 
+克隆时需要关掉代理
+
 ## git 多用户设置方法
 
 创建配置文件 `config`
@@ -67,3 +69,4 @@ User 你的名称
 // 私钥路径
 IdentityFile ~/.ssh/id_rsa_aliyun
 ```
+
