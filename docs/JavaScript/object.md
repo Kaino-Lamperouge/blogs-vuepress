@@ -17,4 +17,4 @@ delete xiaoming.school; // 删除一个不存在的school属性也不会报错
 ```
 
 <!-- ![示例](/images/obj.png) -->
-<img :src="$withBase('/images/obj.png')">
+<img src="/images/obj.png">

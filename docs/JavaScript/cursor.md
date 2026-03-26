@@ -6,7 +6,7 @@ body.style.cursor = "move"
 ```
 
 鼠标的指针就被替换成一个十字架样式
-<img :src="$withBase('/images/cursor.png')">
+<img src="/images/cursor.png">
 
 通过 `cursor` 属性将指针替换为自定义图片
 

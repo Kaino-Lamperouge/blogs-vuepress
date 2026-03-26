@@ -20,7 +20,7 @@ element.addEventListener(event, function, useCapture);
 
 ### 示例
 
-<img :src="$withBase('/images/event.png')">
+<img src="/images/event.png">
 
 - 给三个盒子依次绑定点击事件，当点击盒子的时候，会依次触发父级元素的点击事件
 
