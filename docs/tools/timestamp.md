@@ -1,3 +1,11 @@
+---
+title: "时间戳"
+date: 2023-03-27
+tags:
+  - 工程实践
+  - 日期
+description: "时间戳是自 1970 年 1 月 1 日（08:00:00 GMT）至当前时间的总秒数，它也被称为 Unix 时间戳。"
+---
 # Timestamp
 
 ## timestamp 时间戳

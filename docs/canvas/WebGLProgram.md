@@ -1,3 +1,10 @@
+---
+title: "WebGLProgram"
+date: 2023-09-02
+tags:
+  - canvas
+description: "分别为顶点着色器和片元着色器（两种着色器都是采用 GLSL 语言编写的）"
+---
 # WebGLProgram
 
 **WebGLProgram** 是 `WebGL API` 的一部分，它由两个 `WebGLShaders`（`webgl` 着色器）组成

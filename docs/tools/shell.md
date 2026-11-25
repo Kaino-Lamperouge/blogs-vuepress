@@ -1,3 +1,11 @@
+---
+title: "Shell"
+date: 2023-03-27
+tags:
+  - 工程实践
+  - 工程化
+description: "Shell 是一个用 C语言 编写的程序，它是用户使用 Linux 的桥梁。"
+---
 # Shell
 
 `Shell` 是一个用 `C语言` 编写的程序，它是用户使用 `Linux` 的桥梁。

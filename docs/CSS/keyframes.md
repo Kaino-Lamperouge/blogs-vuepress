@@ -1,3 +1,11 @@
+---
+title: "@keyframes 关键帧"
+date: 2026-03-22
+tags:
+  - css
+  - 动画
+description: "@keyframes 动画是循环的，transform 只执行一遍"
+---
 # keyframes
 
 ## 介绍

@@ -1,3 +1,10 @@
+---
+title: "void 运算符"
+date: 2026-03-22
+tags:
+  - javascript
+description: "void 运算符对给定的表达式进行求值，然后返回 undefined 。"
+---
 # void 运算符
 
 **`void` 是一元运算符**

@@ -1,3 +1,11 @@
+---
+title: "Export 与模块导出"
+date: 2026-03-22
+tags:
+  - javascript
+  - 模块
+description: "在创建 JavaScript 模块时，export 语句用于从模块中导出实时绑定的函数、对象或原始值，以便其他程序可以通过 import 语句使用它们。"
+---
 # Export
 
 在创建 `JavaScript` 模块时，`export` 语句用于从模块中导出实时绑定的函数、对象或原始值，以便其他程序可以通过 `import` 语句使用它们。

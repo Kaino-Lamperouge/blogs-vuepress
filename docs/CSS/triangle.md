@@ -1,3 +1,10 @@
+---
+title: "CSS 三角形"
+date: 2026-03-24
+tags:
+  - css
+description: "/ 向上三角形 /"
+---
 # triangle
 
 ```css

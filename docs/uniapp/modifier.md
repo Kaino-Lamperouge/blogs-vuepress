@@ -1,3 +1,10 @@
+---
+title: "事件修饰符"
+date: 2024-03-26
+tags:
+  - uniapp
+description: "修饰符 (modifier) 是以半角句号 . 指明的特殊后缀"
+---
 # 事件修饰符
 
 修饰符 (`modifier`) 是以半角句号 . 指明的特殊后缀

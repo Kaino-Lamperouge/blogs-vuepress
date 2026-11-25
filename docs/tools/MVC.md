@@ -1,3 +1,11 @@
+---
+title: "MVC"
+date: 2024-03-26
+tags:
+  - 工程实践
+  - 架构
+description: "MVC 是 Model-View-Controller 的缩写，是一种常用的设计模式，特别是在 Web 应用程序和桌面应用程序的开发中。MVC 将应用程序的数据模型（Model）…"
+---
 # MVC
 
 `MVC` 是 `Model-View-Controller` 的缩写，是一种常用的设计模式，特别是在 `Web` 应用程序和桌面应用程序的开发中。`MVC` 将应用程序的数据模型（`Model`），用户界面（`View`）和数据控制器（`Controller`）分离，使得软件可以模块化，降低各部分之间的耦合，提高代码的可读性和可维护性。

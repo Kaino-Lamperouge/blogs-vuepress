@@ -1,3 +1,11 @@
+---
+title: "UUID"
+date: 2023-03-30
+tags:
+  - 工程实践
+  - 工具
+description: "import { getUUID } from \"@/utils\";"
+---
 # uuid
 
 ```html

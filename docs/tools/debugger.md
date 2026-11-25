@@ -1,3 +1,11 @@
+---
+title: "断点调试"
+date: 2026-03-26
+tags:
+  - 工程实践
+  - 调试
+description: "在代码中加一句 debugger ，到浏览器中刷新页面，浏览器就会在 debugger 语句那停止执行。"
+---
 # 断点调试
 
 ## `Chrome` `debugger` 基本用法

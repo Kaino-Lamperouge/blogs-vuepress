@@ -1,3 +1,10 @@
+---
+title: "CSS 变量"
+date: 2024-03-26
+tags:
+  - uniapp
+description: "以下组件的高度是固定的，不可修改"
+---
 # CSS
 
 ## 内置 CSS 变量

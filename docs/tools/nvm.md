@@ -1,3 +1,11 @@
+---
+title: "nvm"
+date: 2026-03-24
+tags:
+  - 工程实践
+  - 工程化
+description: "nvm （node.js version management），是一个 nodejs 的版本管理工具。用于管理和切换 Node.js 版本的工具，允许开发者在同一台机器上安装和…"
+---
 # nvm
 
 `nvm` （`node.js version management`），是一个 `nodejs` 的版本管理工具。用于管理和切换 `Node.js` 版本的工具，允许开发者在同一台机器上安装和使用多个版本的 `Node.js`

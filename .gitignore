@@ -1,6 +1,7 @@
 node_modules
-package-lock.json
 .temp
 .cache
-docs\.vuepress\dist
+docs/.vuepress/.temp
+docs/.vuepress/.cache
+docs/.vuepress/dist
 dist

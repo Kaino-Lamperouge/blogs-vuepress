@@ -1,3 +1,10 @@
+---
+title: "对象"
+date: 2026-03-26
+tags:
+  - javascript
+description: "由于 JavaScript 的对象是动态类型，可以自由地给一个对象添加或删除属性："
+---
 # 对象
 
 由于 `JavaScript` 的对象是动态类型，可以自由地给一个对象添加或删除属性：

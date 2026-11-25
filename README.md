@@ -1,114 +1,60 @@
-# Hello VuePress
+# blogs-vuepress
 
-- <https://vuepress.github.io/>
+前端笔记站点。VuePress 2（rspack bundler）+ 默认主题，构建产物发布到 GitHub Pages。
 
-## 手动安装
+- 线上地址：<https://kaino-lamperouge.github.io/blogs/>
+- 发布分支：`gh-pages`
 
-### Step 1: Create and change into a new directory
+## 环境要求
 
-```bash
-mkdir vuepress-starter
-cd vuepress-starter
-```
+- Node.js >= 22.22.0
+- npm（仓库内提交了 `package-lock.json`，用 npm 安装依赖）
 
-### Step 2: Initialize your project
-
-```bash
-git init
-npm init
-```
-
-### Step 3: Install VuePress locally
+## 常用命令
 
 ```bash
-npm install -D vuepress@next
+npm install                      # 安装依赖
+npm run docs:dev                 # 本地开发 http://localhost:8080/blogs/
+npm run docs:build               # 只构建，产物在 docs/.vuepress/dist
+npm run deploy-gh                # 构建并发布
+npm run deploy-gh -- --dry-run   # 只构建 + 本地提交，不推送
 ```
 
-### Step 4: Add some scripts to package.json
+`docs:dev` 和 `docs:build` 都带 `base: /blogs/`，本地预览也要访问 `/blogs/` 路径。
 
-```json
-{
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "deploy-gh": "GH=1 npm run docs:build && bash scripts/deploy-gh.sh"
-  }
-}
-```
+## 部署
 
-### Step 5: Add the default temp and cache directory to .gitignore file
+`npm run deploy-gh` 会依次完成：构建 → 写入 `.nojekyll` / `.gitattributes` → 在 `docs/.vuepress/dist` 内初始化 `gh-pages` 分支 → 提交 → 强推。
+
+默认目标是 `git@github.com:Kaino-Lamperouge/blogs.git` 的 `gh-pages`，可以在运行时覆盖：
 
 ```bash
-echo 'node_modules' >> .gitignore
-echo '.temp' >> .gitignore
-echo '.cache' >> .gitignore
+DEPLOY_REMOTE=git@github.com:<user>/<repo>.git npm run deploy-gh
+DEPLOY_BRANCH=pages npm run deploy-gh
 ```
 
-### Step 6: Create your first document
+注意两点：
 
-```bash
-mkdir docs
+- VuePress 每次构建都会清空 `dist`，所以脚本每次重新建仓并强推，不会残留旧文件；
+- `base: /blogs/` 必须和目标仓库名对应。如果换仓库或换域名，先改 `docs/.vuepress/config.js` 里的 `base`，否则静态资源全部 404。
 
-echo '# Hello VuePress' > docs/README.md
+## 目录结构
+
+```text
+docs/                       # 所有内容
+├── .vuepress/
+│   ├── config.js           # 站点、导航、侧边栏配置
+│   ├── public/             # 静态资源（图片等）
+│   └── utils/              # 未接入的工具函数
+├── CSS/  JavaScript/       # 注意目录名大小写
+├── canvas/  chrome/  tools/
+└── README.md               # 首页
+scripts/deploy-gh.mjs       # 部署脚本（scripts/deploy-gh.sh 为兼容包装）
 ```
 
-### Step 7: Serve the documentation site in the local server
+## 写作约定
 
-```bash
-npm run docs:dev
-```
-
-## 配置 GitHub Pages
-
-### 在 docs/.vuepress/config.js 中配置正确的 base
-
-```js
-module.exports = {
-  title: "My Blog",
-  description: "This is a blog.",
-  base: '/blog/' 
-}
-```
-
-### 新建脚本 my-vuepress/scripts/deploy-gh.sh
-
-```sh
-#!/usr/bin/env sh
-
-# 确保脚本抛出遇到的错误
-set -e
-
-# 生成静态文件
-npm run docs:build
-
-# 进入生成的文件夹
-cd docs/.vuepress/dist
-
-# 如果是发布到自定义域名
-# echo 'www.example.com' > CNAME
-
-git init
-git add -A
-git commit -m 'deploy'
-
-# 如果发布到 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-
-# 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-
-# 把上面的 <USERNAME> 换成你自己的 Github 用户名，<REPO> 换成仓库名，比如我这里就是：
-git push -f git@github.com:Kaino-Lamperouge/blogs.git master:gh-pages
-
-cd -
-```
-
-### 执行脚本进行部署
-
-```bash
-yarn deploy-gh # 或者：npm run deploy-gh
-```
-
-### 返回 Git 仓库，点击 settings
-
-github-pages click
+- 配置里的页面链接写 `.html`（如 `/CSS/animation.html`），不要写 `.md`，也不要省扩展名；
+- 目录名和文件名区分大小写，GitHub Pages 运行在 Linux 上，Windows 本地能访问不代表线上能访问；
+- 每篇保持一个 H1，标题层级最深到 H3（`outline` 只显示 H2–H3）；
+- 图片放在 `docs/.vuepress/public/`，用 Markdown 语法 `![](/images/xxx.png)` 引用，VuePress 会自动补上 `base`；手写 `<img src="/images/...">` 不会补前缀，线上会 404。

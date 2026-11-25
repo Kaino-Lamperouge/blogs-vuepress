@@ -1,3 +1,12 @@
+---
+title: "GLSL 着色器语言"
+date: 2026-03-26
+tags:
+  - canvas
+  - glsl
+  - webgl
+description: "GLSL 中的向量( vec2 , vec3 , vec4 )"
+---
 # OpenGL
 
 ## 着色器语言 `GLSL` (opengl-shader-language)

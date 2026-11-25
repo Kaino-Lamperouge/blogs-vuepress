@@ -1,3 +1,12 @@
+---
+title: "内存泄漏排查"
+date: 2026-03-26
+tags:
+  - 工程实践
+  - 性能
+  - 调试
+description: "引擎中有垃圾回收机制，它主要针对一些程序中不再使用的对象，对其清理回收释放掉内存。"
+---
 # 内存泄漏
 
 ## 什么是内存泄漏
@@ -350,8 +359,7 @@ obj = null
 
 `Heap Profiling` 可以记录当前的堆内存 `heap` 的快照，并生成对象的描述文件，该描述文件给出了当下 `JS` 运行所用的所有对象，以及这些对象所占用的内存大小、引用的层级关系等等，用它就可以定位出引起问题的具体原因以及位置。
 
-<!-- ![示例](/images/memory.png) -->
-<img src="/images/memory.png" alt=''>
+![Memory 面板 Heap Profiling](/images/memory.webp)
 
 点击一下小垃圾桶（标记 3），触发一下 GC，把没用的东西从内存中干掉
 
@@ -394,8 +402,7 @@ obj = null
 - `array`、`string`、`number`、`regexp` 引用了数组、字符串、数字或正则表达式的对象类型
 - `HTMLDivElement`、`HTMLAnchorElement`、`DocumentFragment`，代码中对元素的引用或者指定的 `DOM` 对象引用
 
-<!-- ![示例](/images/快照对比.png) -->
-<img src="/images/快照对比.png" alt=''>
+![快照对比视图](/images/快照对比.webp)
 
 ### 修复验证
 

@@ -1,3 +1,11 @@
+---
+title: "npm"
+date: 2023-03-30
+tags:
+  - 工程实践
+  - 工程化
+description: "npm (Node Package Manager) 意思是 nodejs 的包管理和分发工具，用于 node 插件管理(包括安装、卸载、管理依赖等)。"
+---
 # NPM
 
 `npm (Node Package Manager)` 意思是 `nodejs` 的包管理和分发工具，用于 `node` 插件管理(包括安装、卸载、管理依赖等)。

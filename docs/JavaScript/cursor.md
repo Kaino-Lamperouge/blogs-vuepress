@@ -1,3 +1,10 @@
+---
+title: "更改鼠标指针"
+date: 2026-03-26
+tags:
+  - javascript
+description: "鼠标的指针就被替换成一个十字架样式"
+---
 # 更改鼠标指针
 
 ```js

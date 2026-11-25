@@ -1,3 +1,11 @@
+---
+title: "Markdown 语法速查"
+date: 2026-03-26
+tags:
+  - 工程实践
+  - markdown
+description: "在段落的第一行最前面加\">\""
+---
 # Markdown
 
 ## 标题
@@ -217,11 +225,11 @@ cond(no)->op
 
 质量守恒公式：$$E=mc^2$$
 
-支持 **LaTeX** 编辑显示支持，访问 [MathJax][http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference] 参考更多使用方法。
+支持 **LaTeX** 编辑显示支持，访问 [MathJax 基础教程](https://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) 参考更多使用方法。
 
 eg : $\sum_{i=1}^n a_i=0$
 
-推荐一个常用的数学公式在线编译网站：(<https://private.codecogs.com/latex/eqneditor.php>)(<http://www.codecogs.com/latex/eqneditor.php>)
+推荐一个常用的数学公式在线编译网站：<https://www.codecogs.com/latex/eqneditor.php>。
 
 ## 支持 HTML 标签
 
@@ -233,7 +241,9 @@ eg : $\sum_{i=1}^n a_i=0$
   全方大的空白 或
 
 ```html
-<div id='anchor'>锚点</div>
+<div id="anchor">锚点</div>
 ```
 
-[点我跳转](#anchor)
+上面的 HTML 只是语法示例，写在代码块里不会被渲染，因此不能当作跳转目标。页内跳转请链到真实标题——标题会自动生成锚点，直接用 `#标题` 即可：
+
+[跳转到「分割线」](#分割线)

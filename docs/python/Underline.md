@@ -1,3 +1,10 @@
+---
+title: "Python 中下划线的 5 种含义"
+date: 2026-03-26
+tags:
+  - python
+description: "以单个下划线开头的变量或方法仅供内部使用"
+---
 # Python中下划线的5种含义
 
 1. 单前导下划线 `_var`

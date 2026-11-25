@@ -1,3 +1,10 @@
+---
+title: "DOM 事件流"
+date: 2026-03-26
+tags:
+  - javascript
+description: "DOM 事件流（event flow ）存在三个阶段：事件捕获阶段、处于目标阶段、事件冒泡阶段。"
+---
 # `DOM` 事件流
 
 `DOM` 事件流（`event flow` ）存在三个阶段：事件捕获阶段、处于目标阶段、事件冒泡阶段。

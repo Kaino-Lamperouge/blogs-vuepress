@@ -1,3 +1,10 @@
+---
+title: "计时器"
+date: 2023-08-29
+tags:
+  - demo
+description: "function twochar(n) {"
+---
 # 计时器
 
 ## 网页打开自动计时

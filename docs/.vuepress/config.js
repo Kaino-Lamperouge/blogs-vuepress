@@ -1,142 +1,150 @@
 import { defineUserConfig } from 'vuepress';
-import { defaultTheme } from '@vuepress/theme-default';
-import { webpackBundler } from '@vuepress/bundler-webpack';
+import { rspackBundler } from '@vuepress/bundler-rspack';
+import { themeDefault } from '@vuepress/theme-default';
+import { searchPlugin } from '@vuepress/plugin-search';
+
+const theme = themeDefault({
+  // 导航栏
+  nav: [
+    { text: 'Home', link: '/' },
+    {
+      text: 'CSS',
+      items: [
+        { text: 'animation', link: '/CSS/animation.html' },
+        { text: 'Image', link: '/CSS/image.html' },
+        { text: '@keyframes', link: '/CSS/keyframes.html' },
+        { text: 'Opacity', link: '/CSS/opacity.html' },
+        { text: 'Style', link: '/CSS/style.html' },
+        { text: '文本控制属性', link: '/CSS/text.html' },
+        { text: 'Triangle', link: '/CSS/triangle.html' },
+      ],
+    },
+    {
+      text: 'JavaScript',
+      items: [
+        { text: '浅拷贝深拷贝', link: '/JavaScript/copy.html' },
+        { text: '更改鼠标指针', link: '/JavaScript/cursor.html' },
+        { text: '事件流', link: '/JavaScript/event.html' },
+        { text: 'Export', link: '/JavaScript/export.html' },
+        { text: 'Grammar', link: '/JavaScript/grammar.html' },
+        { text: 'Object', link: '/JavaScript/object.html' },
+        { text: 'Void', link: '/JavaScript/void.html' },
+      ],
+    },
+    {
+      text: 'Canvas',
+      items: [
+        { text: 'Canvas', link: '/canvas/Canvas.html' },
+        { text: 'GLSL', link: '/canvas/OpenGL.html' },
+        { text: 'Three.js', link: '/canvas/Three.js.html' },
+        { text: 'WebGL', link: '/canvas/WebGL.html' },
+        { text: 'WebGLProgram', link: '/canvas/WebGLProgram.html' },
+      ],
+    },
+    {
+      text: 'Chrome',
+      items: [{ text: '扩展', link: '/chrome/Extension.html' }],
+    },
+    {
+      text: 'uni-app',
+      items: [
+        { text: '引用', link: '/uniapp/import.html' },
+        { text: 'CSS 变量', link: '/uniapp/CSS.html' },
+        { text: '事件修饰符', link: '/uniapp/modifier.html' },
+        { text: '组件', link: '/uniapp/component.html' },
+      ],
+    },
+    {
+      text: 'Python',
+      items: [{ text: '下划线', link: '/python/Underline.html' }],
+    },
+    {
+      text: 'MiniProject',
+      items: [
+        { text: '计时器', link: '/miniproject/Timer.html' },
+        { text: 'demo', link: '/miniproject/Demo.html' },
+        { text: '批量删除', link: '/miniproject/Batch.html' },
+      ],
+    },
+    { text: 'About', link: '/about/' },
+  ],
+
+  // 侧边栏：/tools/ 用手工清单，其余页面用当前页大纲
+  sidebar: {
+    '/tools/': [
+      {
+        text: 'Tools',
+        collapsed: false,
+        items: [
+          { text: 'B端C端', link: '/tools/Business Consumer.html' },
+          { text: '闭包', link: '/tools/closure.html' },
+          { text: 'Css预处理器', link: '/tools/css preprocessor.html' },
+          { text: '防抖和节流', link: '/tools/debounce throttle.html' },
+          { text: '断点调试', link: '/tools/debugger.html' },
+          { text: '钩子函数', link: '/tools/hook.html' },
+          { text: '低代码', link: '/tools/Low Code.html' },
+          { text: 'md语法', link: '/tools/markdown.html' },
+          { text: '内存泄漏', link: '/tools/Memory leak.html' },
+          { text: 'MVC', link: '/tools/MVC.html' },
+          { text: 'MVVM', link: '/tools/MVVM.html' },
+          { text: 'NPM', link: '/tools/npm.html' },
+          { text: 'NVM', link: '/tools/nvm.html' },
+          { text: '优化', link: '/tools/optimize.html' },
+          { text: 'Promise', link: '/tools/promise.html' },
+          { text: '报错', link: '/tools/report errors.html' },
+          { text: 'Shell', link: '/tools/shell.html' },
+          { text: 'SSH', link: '/tools/ssh.html' },
+          { text: '时间戳', link: '/tools/timestamp.html' },
+          { text: 'URL编码', link: '/tools/URL Code.html' },
+          { text: 'URL携带参数缺失', link: '/tools/URL Transfer Parameters.html' },
+          { text: 'UUID', link: '/tools/uuid.html' },
+        ],
+      },
+    ],
+    '/': 'heading',
+  },
+
+  // 页面大纲与元信息
+  outline: { level: [2, 3], label: '本页目录' },
+  appearance: true,
+  hostname: 'https://kaino-lamperouge.github.io',
+  lastUpdated: { text: '最后更新' },
+  contributors: false,
+  editLink: {
+    pattern: 'https://github.com/Kaino-Lamperouge/blogs-vuepress/edit/master/docs/:path',
+    text: '在 GitHub 编辑此页',
+  },
+  notFound: {
+    title: '页面走丢了',
+    quote: '链接可能已经失效，或者这篇笔记被挪了位置。',
+    linkText: '回到首页',
+  },
+  footer: {
+    message: '基于 VuePress 构建',
+    copyright: 'Copyright © 2026 Kaino·Lamperouge',
+  },
+});
+
+// 主题返回的绝对路径在 Windows 下是反斜杠，会被写成非法的 ESM 模块名，统一成正斜杠
+theme.clientConfigFile = theme.clientConfigFile?.replaceAll('\\', '/');
 
 export default defineUserConfig({
-  // 站点配置
-  title: "Kaino·Lamperouge",
-  // description: "This is a blog.",
-  base: "/blogs/",
-  
-  // 构建配置
-  bundler: webpackBundler(),
-  
-  // 主题配置
-  theme: defaultTheme({
-    // 导航栏
-    navbar: [
-      { text: "Home", link: "/" },
-      {
-        text: "CSS",
-        children: [
-          { text: "animation", link: "/css/animation.md" },
-          { text: "Image", link: "/css/image.md" },
-          { text: "@keyframes", link: "/css/keyframes.md" },
-          { text: "Opacity", link: "/css/opacity.md" },
-          { text: "Style", link: "/css/style.md" },
-          { text: "文本控制属性", link: "/css/text.md" },
-          { text: "Triangle", link: "/css/triangle.md" },
-        ],
-      },
-      {
-        text: "JavaScript",
-        children: [
-          { text: "浅拷贝深拷贝", link: "/javascript/copy.md" },
-          { text: "更改鼠标指针", link: "/javascript/cursor.md" },
-          { text: "事件流", link: "/javascript/event.md" },
-          { text: "Export", link: "/javascript/export.md" },
-          { text: "Grammar", link: "/javascript/grammar.md" },
-          { text: "Object", link: "/javascript/object.md" },
-          { text: "Void", link: "/javascript/void.md" },
-        ],
-      },
-      {
-        text: "Canvas",
-        children: [
-          { text: "Canvas", link: "/canvas/Canvas.md" },
-          { text: "GLSL", link: "/canvas/OpenGL.md" },
-          { text: "Three.js", link: "/canvas/Three.js.md" },
-          { text: "WebGL", link: "/canvas/WebGL.md" },
-          { text: "WebGLProgram", link: "/canvas/WebGLProgram.md" },
-        ],
-      },
-      {
-        text: "Chrome",
-        children: [{ text: "扩展", link: "/chrome/Extension.md" }],
-      },
-      {
-        text: "uni-app",
-        children: [
-          { text: "引用", link: "/uniapp/import.md" },
-          { text: "CSS 变量", link: "/uniapp/CSS.md" },
-          { text: "事件修饰符", link: "/uniapp/modifier.md" },
-          { text: "组件", link: "/uniapp/component.md" },
-        ],
-      },
-      {
-        text: "Python",
-        children: [{ text: "下划线", link: "/python/Underline.md" }],
-      },
-      {
-        text: "MiniProject",
-        children: [
-          { text: "计时器", link: "/miniproject/Timer.md" },
-          { text: "demo", link: "/miniproject/Demo.md" },
-          { text: "批量删除", link: "/miniproject/Batch.md" },
-        ],
-      },
-      { text: "About", link: "/about/" },
-    ],
-    
-    // 侧边栏配置 - VuePress 2.x 使用对象格式
-    sidebar: {
-      '/tools/': [
-        {
-          text: 'Tools',
-          collapsible: true,
-          children: [
-            { text: 'B端C端', link: '/tools/Business Consumer.md' },
-            { text: '闭包', link: '/tools/closure.md' },
-            { text: 'Css预处理器', link: '/tools/css preprocessor.md' },
-            { text: '防抖和节流', link: '/tools/debounce throttle.md' },
-            { text: '断点调试', link: '/tools/debugger.md' },
-            { text: '钩子函数', link: '/tools/hook.md' },
-            { text: '低代码', link: '/tools/Low Code.md' },
-            { text: 'md语法', link: '/tools/markdown.md' },
-            { text: '内存泄漏', link: '/tools/Memory Leak.md' },
-            { text: 'MVC', link: '/tools/MVC.md' },
-            { text: 'MVVM', link: '/tools/MVVM.md' },
-            { text: 'NPM', link: '/tools/npm.md' },
-            { text: 'NVM', link: '/tools/nvm.md' },
-            { text: '优化', link: '/tools/optimize.md' },
-            { text: 'Promise', link: '/tools/promise.md' },
-            { text: '报错', link: '/tools/report errors.md' },
-            { text: 'Shell', link: '/tools/shell.md' },
-            { text: 'SSH', link: '/tools/ssh.md' },
-            { text: '时间戳', link: '/tools/timestamp.md' },
-            { text: 'URL编码', link: '/tools/URL Code.md' },
-            { text: 'URL携带参数缺失', link: '/tools/URL Transfer Parameters.md' },
-            { text: 'UUID', link: '/tools/uuid.md' },
-          ].map(item => ({
-            text: item.text,
-            link: item.link.replace('.md', '')
-          }))
-        }
-      ],
-      
-      // 为其他路径自动生成侧边栏
-      '/css/': 'auto',
-      '/javascript/': 'auto',
-      '/canvas/': 'auto',
-      '/chrome/': 'auto',
-      '/uniapp/': 'auto',
-      '/python/': 'auto',
-      '/miniproject/': 'auto',
-      
-      // 回退侧边栏
-      '/': 'auto'
-    },
-    
-    // 搜索配置
-    search: true,
-    searchMaxSuggestions: 10,
-  }),
-  
-  // 插件配置
+  lang: 'zh-CN',
+  title: 'Kaino·Lamperouge',
+  description: '前端笔记：CSS、JavaScript、Canvas / WebGL、uni-app 与工程实践',
+  base: '/blogs/',
+  bundler: rspackBundler(),
+  theme,
   plugins: [
-    // 你可以添加其他插件
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: '搜索笔记',
+        },
+      },
+      isSearchable: (page) => page.path !== '/',
+      maxSuggestions: 12,
+    }),
   ],
-  
-  // 其他配置
   shouldPrefetch: false,
 });

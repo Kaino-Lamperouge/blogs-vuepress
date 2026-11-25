@@ -1,3 +1,10 @@
+---
+title: "批量删除微博"
+date: 2024-03-26
+tags:
+  - demo
+description: "var s = document.createElement('script');"
+---
 # 批量删除微博
 
 ```js

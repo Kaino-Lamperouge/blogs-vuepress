@@ -1,0 +1,28 @@
+// 站点级微调：图片、首页特性卡片、导航过渡
+.vp-doc img {
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.25s ease;
+}
+
+.vp-doc img:hover {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.16);
+}
+
+.vp-feature {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.vp-feature:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.vp-navbar,
+.vp-sidebar {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+html[data-theme='dark'] .vp-doc img {
+  opacity: 0.94;
+}

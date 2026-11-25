@@ -1,3 +1,10 @@
+---
+title: "Chrome 扩展"
+date: 2026-03-26
+tags:
+  - chrome
+description: "extension 程序的图标，可以有一个或多个。"
+---
 # chrome 扩展程序（插件）
 
 ## 插件构成

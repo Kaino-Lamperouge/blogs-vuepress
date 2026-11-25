@@ -1,3 +1,10 @@
+---
+title: "Scoped CSS 与深度选择器"
+date: 2026-03-24
+tags:
+  - css
+description: "加了 scoped ， PostCSS 给一个组件中的所有 dom 添加唯一的一个自定义属性（唯一性的标记）data-v-实例标识，即 CSS带属性选择器"
+---
 # Style
 
 ## `Scoped` `CSS` 的原理

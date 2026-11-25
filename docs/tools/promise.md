@@ -1,3 +1,11 @@
+---
+title: "Promise"
+date: 2023-03-30
+tags:
+  - 工程实践
+  - 异步
+description: "Promise 是一个对象，也是一个构造函数"
+---
 # Promise 对象
 
 ## 概述

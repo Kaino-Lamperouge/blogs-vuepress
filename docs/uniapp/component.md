@@ -1,3 +1,10 @@
+---
+title: "组件"
+date: 2024-03-26
+tags:
+  - uniapp
+description: "组件安装在项目的 components 目录下，并符合 components/组件名称/组件名称.vue 目录结构。就可以不用引用、注册，直接在页面中使用。"
+---
 # 组件
 
 ## 局部注册

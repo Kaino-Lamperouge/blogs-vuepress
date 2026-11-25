@@ -1,3 +1,11 @@
+---
+title: "CSS 动画 animation"
+date: 2026-03-24
+tags:
+  - css
+  - 动画
+description: "将动画应用到指定的 HTML 元素"
+---
 # animation
 
 将动画应用到指定的 `HTML` 元素

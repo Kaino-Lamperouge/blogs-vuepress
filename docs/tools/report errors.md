@@ -1,3 +1,11 @@
+---
+title: "常见报错"
+date: 2026-03-26
+tags:
+  - 工程实践
+  - 调试
+description: "Error: error:0308010C:digital envelope routines::unsupported"
+---
 # 报错
 
 ## npm报错
@@ -11,8 +19,7 @@ Error: error:0308010C:digital envelope routines::unsupported
 
 在 `node V17` 以前一些可以正常运行的的应用程序，但是在 `V17` 版本可能会抛出以下异常:
 
-<!-- ![示例](/images/npm报错.png) -->
-<img src="/images/npm报错.png" alt=''>
+![npm 报错 OpenSSL unsupported](/images/npm报错.webp)
 
 #### `nvm` 切换 `node` 版本无效问题
 
