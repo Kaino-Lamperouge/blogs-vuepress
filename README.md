@@ -68,7 +68,7 @@ scripts/deploy-gh.mjs       # 部署脚本（scripts/deploy-gh.sh 为兼容包�
 ## 写作约定
 
 - 配置里的页面链接写 `.html`（如 `/CSS/animation.html`），不要写 `.md`，也不要省扩展名；
-- 文件名用 kebab-case（`memory-leak.md`、`url-code.md`），不要带空格或点号；改文件名后要在 `public/` 下留一个跳转页，旧链接才不会 404；
+- 文件名用 kebab-case（`memory-leak.md`、`url-code.md`），不要带空格或点号；改名会改变线上 URL，旧链接会 404，需要的话再在 `public/` 下补跳转页；
 - 目录名和文件名区分大小写，GitHub Pages 运行在 Linux 上，Windows 本地能访问不代表线上能访问；
 - 每篇保持一个 H1，标题层级最深到 H3（`outline` 只显示 H2–H3）；
 - 图片放在 `docs/.vuepress/public/images/`，优先用 WebP，Markdown 语法 `![说明](/images/xxx.webp)` 引用，VuePress 会自动补上 `base`。

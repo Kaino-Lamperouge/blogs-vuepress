@@ -6,7 +6,7 @@ import { slimsearchPlugin } from '@vuepress/plugin-slimsearch';
 const theme = themeDefault({
   // 导航栏
   nav: [
-    { text: 'Home', link: '/' },
+    { text: '首页', link: '/' },
     {
       text: 'CSS',
       items: [
@@ -41,10 +41,7 @@ const theme = themeDefault({
         { text: 'WebGLProgram', link: '/canvas/WebGLProgram.html' },
       ],
     },
-    {
-      text: 'Chrome',
-      items: [{ text: '扩展', link: '/chrome/Extension.html' }],
-    },
+    { text: 'Chrome', link: '/chrome/Extension.html' },
     {
       text: 'uni-app',
       items: [
@@ -54,10 +51,7 @@ const theme = themeDefault({
         { text: '组件', link: '/uniapp/component.html' },
       ],
     },
-    {
-      text: 'Python',
-      items: [{ text: '下划线', link: '/python/Underline.html' }],
-    },
+    { text: 'Python', link: '/python/Underline.html' },
     {
       text: 'MiniProject',
       items: [
@@ -133,6 +127,10 @@ export default defineUserConfig({
   title: 'Kaino·Lamperouge',
   description: '前端笔记：CSS、JavaScript、Canvas / WebGL、uni-app 与工程实践',
   base: '/blogs/',
+  head: [
+    ['meta', { name: 'theme-color', content: '#ffffff', media: '(prefers-color-scheme: light)' }],
+    ['meta', { name: 'theme-color', content: '#1b1b1f', media: '(prefers-color-scheme: dark)' }],
+  ],
   bundler: rspackBundler(),
   theme,
   plugins: [
