@@ -150,7 +150,7 @@ export default defineUserConfig({
           placeholder: '搜索笔记全文',
         },
       },
-      filter: (page) => page.path !== '/',
+      filter: (page) => page.path !== '/' && !page.path.startsWith('/misc/'),
     }),
   ],
   shouldPrefetch: false,
