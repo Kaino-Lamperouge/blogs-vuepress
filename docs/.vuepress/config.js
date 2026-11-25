@@ -1,7 +1,7 @@
 import { defineUserConfig } from 'vuepress';
 import { rspackBundler } from '@vuepress/bundler-rspack';
 import { themeDefault } from '@vuepress/theme-default';
-import { searchPlugin } from '@vuepress/plugin-search';
+import { slimsearchPlugin } from '@vuepress/plugin-slimsearch';
 
 const theme = themeDefault({
   // 导航栏
@@ -36,7 +36,7 @@ const theme = themeDefault({
       items: [
         { text: 'Canvas', link: '/canvas/Canvas.html' },
         { text: 'GLSL', link: '/canvas/OpenGL.html' },
-        { text: 'Three.js', link: '/canvas/Three.js.html' },
+        { text: 'Three.js', link: '/canvas/threejs.html' },
         { text: 'WebGL', link: '/canvas/WebGL.html' },
         { text: 'WebGLProgram', link: '/canvas/WebGLProgram.html' },
       ],
@@ -76,27 +76,27 @@ const theme = themeDefault({
         text: 'Tools',
         collapsed: false,
         items: [
-          { text: 'B端C端', link: '/tools/Business Consumer.html' },
+          { text: 'B端C端', link: '/tools/business-consumer.html' },
           { text: '闭包', link: '/tools/closure.html' },
-          { text: 'Css预处理器', link: '/tools/css preprocessor.html' },
-          { text: '防抖和节流', link: '/tools/debounce throttle.html' },
+          { text: 'Css预处理器', link: '/tools/css-preprocessor.html' },
+          { text: '防抖和节流', link: '/tools/debounce-throttle.html' },
           { text: '断点调试', link: '/tools/debugger.html' },
           { text: '钩子函数', link: '/tools/hook.html' },
-          { text: '低代码', link: '/tools/Low Code.html' },
+          { text: '低代码', link: '/tools/low-code.html' },
           { text: 'md语法', link: '/tools/markdown.html' },
-          { text: '内存泄漏', link: '/tools/Memory leak.html' },
+          { text: '内存泄漏', link: '/tools/memory-leak.html' },
           { text: 'MVC', link: '/tools/MVC.html' },
           { text: 'MVVM', link: '/tools/MVVM.html' },
           { text: 'NPM', link: '/tools/npm.html' },
           { text: 'NVM', link: '/tools/nvm.html' },
           { text: '优化', link: '/tools/optimize.html' },
           { text: 'Promise', link: '/tools/promise.html' },
-          { text: '报错', link: '/tools/report errors.html' },
+          { text: '报错', link: '/tools/report-errors.html' },
           { text: 'Shell', link: '/tools/shell.html' },
           { text: 'SSH', link: '/tools/ssh.html' },
           { text: '时间戳', link: '/tools/timestamp.html' },
-          { text: 'URL编码', link: '/tools/URL Code.html' },
-          { text: 'URL携带参数缺失', link: '/tools/URL Transfer Parameters.html' },
+          { text: 'URL编码', link: '/tools/url-code.html' },
+          { text: 'URL携带参数缺失', link: '/tools/url-transfer-parameters.html' },
           { text: 'UUID', link: '/tools/uuid.html' },
         ],
       },
@@ -136,14 +136,17 @@ export default defineUserConfig({
   bundler: rspackBundler(),
   theme,
   plugins: [
-    searchPlugin({
+    // 全文搜索：索引正文，不只搜标题
+    slimsearchPlugin({
+      indexContent: true,
+      suggestion: true,
+      searchDelay: 150,
       locales: {
         '/': {
-          placeholder: '搜索笔记',
+          placeholder: '搜索笔记全文',
         },
       },
-      isSearchable: (page) => page.path !== '/',
-      maxSuggestions: 12,
+      filter: (page) => page.path !== '/',
     }),
   ],
   shouldPrefetch: false,

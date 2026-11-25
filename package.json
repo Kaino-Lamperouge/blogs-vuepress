@@ -13,7 +13,6 @@
   "license": "ISC",
   "devDependencies": {
     "@vuepress/bundler-rspack": "2.0.0-rc.32",
-    "@vuepress/plugin-search": "^2.0.0-rc.139",
     "@vuepress/theme-default": "2.0.0-rc.141",
     "sass": "^1.108.2",
     "vue": "^3.5.45",
@@ -21,5 +20,8 @@
   },
   "engines": {
     "node": ">=22.22.0"
+  },
+  "dependencies": {
+    "@vuepress/plugin-slimsearch": "^2.0.0-rc.139"
   }
 }

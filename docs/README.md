@@ -31,7 +31,7 @@ features:
   - icon: 🧰
     title: 工程实践
     details: npm / nvm / Shell、调试、性能优化与内存泄漏排查
-    link: /tools/Memory leak.html
+    link: /tools/memory-leak.html
     linkText: 22 篇笔记
   - icon: 📱
     title: uni-app
