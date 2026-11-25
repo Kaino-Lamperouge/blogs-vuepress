@@ -11,7 +11,7 @@
  *   DEPLOY_BRANCH  目标分支（默认 gh-pages）
  */
 import { execFileSync } from 'node:child_process';
-import { existsSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
@@ -34,6 +34,46 @@ if (!existsSync(dist)) {
 // 阻止 GitHub Pages 走 Jekyll 处理，并避免 Windows 换行归一化噪音
 writeFileSync(resolve(dist, '.nojekyll'), '');
 writeFileSync(resolve(dist, '.gitattributes'), '* -text\n');
+
+// gh-pages 分支自带一个 Actions 部署工作流：
+// 仓库 Pages 的 Source 设为 GitHub Actions 后，每次推送由它直接 deploy-pages，
+// 不再走“分支构建”的每小时次数限制。
+mkdirSync(resolve(dist, '.github/workflows'), { recursive: true });
+writeFileSync(
+  resolve(dist, '.github/workflows/deploy-pages.yml'),
+  [
+    'name: Deploy Pages',
+    '',
+    'on:',
+    '  push:',
+    '    branches: [gh-pages]',
+    '  workflow_dispatch:',
+    '',
+    'permissions:',
+    '  contents: read',
+    '  pages: write',
+    '  id-token: write',
+    '',
+    'concurrency:',
+    '  group: pages',
+    '  cancel-in-progress: true',
+    '',
+    'jobs:',
+    '  deploy:',
+    '    runs-on: ubuntu-latest',
+    '    environment:',
+    '      name: github-pages',
+    '      url: ${{ steps.deployment.outputs.page_url }}',
+    '    steps:',
+    '      - uses: actions/checkout@v4',
+    '      - uses: actions/upload-pages-artifact@v3',
+    '        with:',
+    "          path: '.'",
+    '      - id: deployment',
+    '        uses: actions/deploy-pages@v4',
+    '',
+  ].join('\n'),
+);
 
 console.log(`\n▸ 整理 ${branch} 分支内容（VuePress 每次构建会清空 dist，这里重新建仓）`);
 git(['-C', dist, 'init', '-q']);

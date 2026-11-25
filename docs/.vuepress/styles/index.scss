@@ -1,4 +1,4 @@
-// 站点级微调：图片、首页特性卡片、导航过渡
+// 站点级微调：图片、首页标题、导航过渡
 .vp-doc img {
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
@@ -9,15 +9,6 @@
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.16);
 }
 
-.vp-feature {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.vp-feature:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
 .vp-navbar,
 .vp-sidebar {
   transition: background-color 0.25s ease, border-color 0.25s ease;
@@ -25,4 +16,68 @@
 
 html[data-theme='dark'] .vp-doc img {
   opacity: 0.94;
+}
+
+// 首页 hero 标题不用主题默认的绿色渐变，只用正文色
+:root,
+[data-theme='dark'] {
+  --vp-home-hero-name-color: var(--vp-c-text-1);
+  --vp-home-hero-name-background: none;
+}
+
+// 首页没有配图时，标题、副标题、按钮整体水平居中
+.vp-hero:not(.has-image) .container {
+  align-items: center;
+  text-align: center;
+}
+
+.vp-hero:not(.has-image) .main {
+  width: 100%;
+  max-width: 100%;
+}
+
+.vp-hero:not(.has-image) .heading {
+  align-items: center;
+}
+
+.vp-hero:not(.has-image) .actions {
+  justify-content: center;
+}
+
+// 副标题放宽，避免居中后从词中间折行
+.vp-hero:not(.has-image) .tagline {
+  max-width: 44rem;
+  font-size: 1.375rem;
+}
+
+// 隐藏页 /misc/symbols 的快速索引：筛选框 + 命中/置灰
+.vp-doc input.symbol-filter {
+  width: 100%;
+  max-width: 32rem;
+  padding: 0.5rem 0.9rem;
+  margin: 0.5rem 0 1.25rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.vp-doc input.symbol-filter:focus {
+  border-color: var(--vp-c-accent);
+  outline: none;
+}
+
+.vp-doc td.is-dim {
+  opacity: 0.22;
+}
+
+.vp-doc td.is-hit {
+  background: var(--vp-c-accent-bg);
+  border-radius: 4px;
+}
+
+.vp-doc h3.is-dim {
+  opacity: 0.4;
 }
