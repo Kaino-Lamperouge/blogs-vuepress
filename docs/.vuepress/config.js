@@ -1,5 +1,5 @@
 import { defineUserConfig } from 'vuepress';
-import { rspackBundler } from '@vuepress/bundler-rspack';
+import { viteBundler } from '@vuepress/bundler-vite';
 import { themeDefault } from '@vuepress/theme-default';
 import { slimsearchPlugin } from '@vuepress/plugin-slimsearch';
 
@@ -131,7 +131,13 @@ export default defineUserConfig({
     ['meta', { name: 'theme-color', content: '#ffffff', media: '(prefers-color-scheme: light)' }],
     ['meta', { name: 'theme-color', content: '#1b1b1f', media: '(prefers-color-scheme: dark)' }],
   ],
-  bundler: rspackBundler(),
+  bundler: viteBundler({
+    viteOptions: {
+      ssr: {
+        noExternal: ['@vuepress/search-helper'],
+      },
+    },
+  }),
   theme,
   plugins: [
     // 全文搜索：索引正文，不只搜标题

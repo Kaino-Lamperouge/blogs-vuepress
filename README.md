@@ -1,6 +1,6 @@
 # blogs-vuepress
 
-前端笔记站点。VuePress 2（rspack bundler）+ 默认主题，构建产物发布到 GitHub Pages。
+前端笔记站点。VuePress 2（vite bundler）+ 默认主题，构建产物发布到 GitHub Pages。
 
 - 线上地址：<https://kaino-lamperouge.github.io/blogs/>
 - 发布分支：`gh-pages`
